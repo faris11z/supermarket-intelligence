@@ -1,0 +1,78 @@
+{
+  "_provenance": {
+    "spike": "supermarket-data-acquisition",
+    "retrieved_utc": "2026-09-30T08:59:00Z",
+    "collected_by": "supermarket-intel-spike/0.1",
+    "method": "Single HTTP GET per product page. No JavaScript execution, no authentication, no CAPTCHA handling, no bot-protection circumvention.",
+    "robots_txt": {
+      "url": "https://www.lidl.de/robots.txt",
+      "http_status": 200,
+      "product_path_allowed": true,
+      "notes": "Search IS disallowed (Disallow: *search?q=*), so products were discovered via the robots.txt-advertised product sitemap rather than the onsite search. /user-api/*, /cqe/*, *idsOnly=*, *productsOnly=* were NOT requested."
+    },
+    "product_discovery": {
+      "method": "robots.txt-advertised sitemap: https://www.lidl.de/static/sitemap.xml -> /p/export/DE/de/product_sitemap.xml.gz",
+      "product_url_count": 13337
+    },
+    "extraction_path": "script[application/ld+json] -> @type == 'Product'",
+    "data_type": "DIRECTLY_OBSERVED",
+    "record_count": 2,
+    "critical_scope_caveat": "These two records were selected only to characterise the page format. lidl.de is NOT a general grocery shop: its advertised catalog is dominated by wine/sparkling wine, non-food goods and plants. See docs/research/supermarket-data-acquisition-spike.md section 2."
+  },
+  "records": [
+    {
+      "supermarket": "Lidl",
+      "retailer_domain": "www.lidl.de",
+      "article_number": "100181707",
+      "sku_from_jsonld": "100181707",
+      "product_name": "Breisacher Vulkanfelsen Spätburgunder QbA trocken, Literflasche, Rotwein",
+      "page_title": "Breisacher Vulkanfelsen Spätburgunder QbA trocken, Literflasche, Rotwein | Lidl",
+      "brand": "",
+      "brand_note": "JSON-LD brand object present but its 'name' field was empty for this record",
+      "displayed_price_eur": 5.49,
+      "reference_price_eur": null,
+      "unit_price_value": null,
+      "gtin": ["4006313618105"],
+      "gtin13_primary": "4006313618105",
+      "quantity_value": 1.0,
+      "quantity_unit": "l",
+      "quantity_source": "INFERRED from product name ('Literflasche') - no structured quantity field present",
+      "on_promotion": null,
+      "availability_jsonld": "OnlineOnly",
+      "categories": [],
+      "is_available": null,
+      "is_deposit_product": null,
+      "rating_value": 4.5,
+      "rating_count": 54,
+      "review_count": 54,
+      "rating_note": "aggregateRating present in JSON-LD - a per-product rating signal was observed. No review TEXT was retrieved.",
+      "product_url": "https://www.lidl.de/p/breisacher-vulkanfelsen-spaetburgunder-qba-trocken-literflasche-rotwein/p100181707",
+      "image_urls_count": 2,
+      "location_dependency_observed": "NONE - availability is 'OnlineOnly'; no postcode or store selector detected"
+    },
+    {
+      "supermarket": "Lidl",
+      "retailer_domain": "www.lidl.de",
+      "article_number": "100198362",
+      "sku_from_jsonld": "100198362",
+      "product_name": "f.a.n. Kissen, gesteppt mit Reißverschluss kbA Baumwolle",
+      "page_title": "f.a.n. f.a.n. Kissen, gesteppt mit Reißverschluss kbA Baumwolle | Lidl",
+      "brand": "f.a.n.",
+      "displayed_price_eur": 32.99,
+      "reference_price_eur": null,
+      "unit_price_value": null,
+      "gtin": ["4000863032589", "4000863032596"],
+      "gtin13_primary": "4000863032589",
+      "quantity_value": null,
+      "quantity_unit": null,
+      "on_promotion": null,
+      "availability_jsonld": "OnlineOnly",
+      "categories": [],
+      "is_available": null,
+      "is_deposit_product": null,
+      "product_url": "https://www.lidl.de/p/f-a-n-kissen-gesteppt-mit-reissverschluss-kba-baumwolle/p100198362",
+      "image_urls_count": 5,
+      "location_dependency_observed": "NONE - availability is 'OnlineOnly'; no postcode or store selector detected"
+    }
+  ]
+}

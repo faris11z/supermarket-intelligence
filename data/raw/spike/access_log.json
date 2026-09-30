@@ -1,0 +1,145 @@
+{
+  "_provenance": {
+    "spike": "supermarket-data-acquisition",
+    "compiled_utc": "2026-09-30T09:00:00Z",
+    "purpose": "Record of every HTTP request made during this feasibility spike, and the exact access status of each target domain.",
+    "total_requests": 53,
+    "product_detail_pages_fetched": 7,
+    "note_on_counts": "Original spike made 39 requests across 4 product pages (2 Aldi Nord, 2 Lidl). A follow-up extraction-robustness check made 3 further requests (3 additional Aldi Nord products: Weizenmehl, Bananen, Langkorn Reis) -> 42 requests / 5 Aldi Nord product pages. The Lidl/Aldi store-locator follow-up made 11 further requests, of which 2 were product pages -> 53 requests / 7 product pages (5 Aldi Nord, 2 Lidl) and 2 store pages. Counts here are cumulative. CORRECTION: earlier revisions of this file stated \"5 product pages total\", which conflated the Aldi-only count with the across-chain total. The correct totals are 7 product pages and 53 requests.",
+    "constraints_upheld": {
+      "large_scale_crawling": "NONE - 53 requests total across 6 chains",
+      "javascript_execution": "NONE - curl only, no headless browser",
+      "captcha_solving": "NONE",
+      "user_agent_spoofing": "NONE - a single honest identifying UA was used for every request; no browser impersonation",
+      "proxy_or_ip_rotation": "NONE",
+      "retry_after_block": "NONE - blocked domains were NOT retried with altered request characteristics",
+      "private_api_reverse_engineering": "NONE - only robots.txt-advertised sitemaps and ordinary page HTML were used"
+    }
+  },
+  "user_agent": "supermarket-intel-spike/0.1 (feasibility research; single-page samples only)",
+  "domains": [
+    {
+      "domain": "www.aldi.de",
+      "robots_txt_status": 403,
+      "homepage_status": 403,
+      "block_evidence": "Akamai edge: response body 'Access Denied' with reference link to errors.edgesuite.net",
+      "verdict": "BLOCKED",
+      "action_taken": "Stopped. Documented. No circumvention attempted."
+    },
+    {
+      "domain": "www.aldi-sued.de",
+      "robots_txt_status": "not fetched (parent domain aldi.de already 403)",
+      "homepage_status": 403,
+      "verdict": "BLOCKED",
+      "action_taken": "Stopped. Documented."
+    },
+    {
+      "domain": "www.aldi-nord.de",
+      "robots_txt_status": 200,
+      "homepage_status": 200,
+      "store_page_status": 200,
+      "block_evidence": null,
+      "verdict": "ACCESSIBLE",
+      "action_taken": "Followed robots.txt-advertised sitemaps; fetched 5 product pages from the allowed /produkt/ path (2 in the original spike, 3 in the follow-up robustness check) and 1 store detail page.",
+      "store_locator_finding": "SOLVED, and richer than expected. Store pages expose props.pageProps.storeDetail in __NEXT_DATA__ with lat 54.16939, lng 12.083483, zip 18119 (the postcode the sitemap URL omits), 7 openingHours entries, dated specialOpeningHours, services and paymentOptions. Coordinates are exact store positions, not postcode centroids: 0.56 km from the 18119 centroid but 2.2-10.9 km from neighbouring Rostock centroids. Aldi has NO city index page (/filialen-und-oeffnungszeiten/rostock.html is 404; the bare city path 308-redirects to it), so enumeration must use the store sitemap, unlike Lidl.",
+      "banner_finding": "openingHoursNotes names the operating Regionalgesellschaft ('ALDI GmbH & Co. Kommanditgesellschaft, Anklamer Str. 9, 17126 Jarmen'). Each store therefore identifies its own regional legal entity, so per-banner assortment modelling is derivable from the locator payload. Closes open question 2 for Aldi Nord.",
+      "negative_finding": "8 application/ld+json blocks are present but none is a Store/LocalBusiness entity. Address and opening hours exist only inside the Next.js payload, so a generic schema.org harvest would find nothing on Aldi Nord."
+    },
+    {
+      "domain": "www.edeka.de",
+      "robots_txt_status": 403,
+      "homepage_status": 403,
+      "block_evidence": "Akamai edge: 'Access Denied', errors.edgesuite.net reference",
+      "verdict": "BLOCKED",
+      "action_taken": "Stopped. Documented. No circumvention attempted."
+    },
+    {
+      "domain": "www.edeka-online.de",
+      "robots_txt_status": null,
+      "homepage_status": "no DNS/connection (curl exit 000)",
+      "verdict": "UNAVAILABLE",
+      "action_taken": "Documented. Candidate online-shop domain does not resolve."
+    },
+    {
+      "domain": "shops.edeka.de",
+      "robots_txt_status": null,
+      "homepage_status": "no DNS/connection (curl exit 000)",
+      "verdict": "UNAVAILABLE",
+      "action_taken": "Documented. Candidate online-shop domain does not resolve."
+    },
+    {
+      "domain": "www.kaufland.de",
+      "robots_txt_status": 403,
+      "homepage_status": 403,
+      "block_evidence": "Bot-verification interstitial. HTML title: 'Kaufland.de - Verifizierung erforderlich' (verification required).",
+      "verdict": "BLOCKED - ACTIVE BOT PROTECTION",
+      "action_taken": "Stopped immediately. The challenge was NOT solved, bypassed or evaded."
+    },
+    {
+      "domain": "www.rewe.de",
+      "robots_txt_status": 200,
+      "homepage_status": 403,
+      "shop_page_status": 403,
+      "sitemap_status": 403,
+      "block_evidence": "robots.txt is served, but shop/product/sitemap paths return a 403 HTML shell whose <title> is 'REWE Onlineshop' - i.e. an edge block with a generic fallback page. No product markup, no JSON-LD, no GTIN.",
+      "verdict": "PARTIALLY BLOCKED",
+      "action_taken": "One GET to a path that robots.txt explicitly Allow:s. Documented. No circumvention attempted."
+    },
+    {
+      "domain": "netto.de",
+      "robots_txt_status": 200,
+      "sitemap_status": 200,
+      "block_evidence": null,
+      "robots_txt_content_summary": "User-Agent: * / Allow: / (fully permissive)",
+      "sitemap_finding": "https://netto.de/sitemap.xml returns 560 URLs, ZERO of which are product pages. Segments are: angebote, prospekte, marktsuche, netto-eigenmarken, nettoeigenmarken, karriere, presse, impressum, datenschutz, rezepte, nachhaltigkeit and similar corporate/marketing pages.",
+      "verdict": "ACCESSIBLE BUT NO PRODUCT CATALOG",
+      "action_taken": "Downloaded and analysed the sitemap locally. Concluded netto.de is a corporate site; it advertises no per-product pages. No product pages attempted."
+    },
+    {
+      "domain": "www.netto-online.de",
+      "robots_txt_status": 403,
+      "homepage_status": 301,
+      "block_evidence": "robots.txt returned 403 (the likely real Netto online grocery shop)",
+      "verdict": "BLOCKED",
+      "action_taken": "Stopped. Documented. No circumvention attempted."
+    },
+    {
+      "domain": "www.lidl.de",
+      "robots_txt_status": 200,
+      "homepage_status": 200,
+      "product_page_status": 200,
+      "block_evidence": null,
+      "verdict": "ACCESSIBLE",
+      "action_taken": "Fetched the robots.txt-advertised product sitemap, then 2 product pages. Onsite search deliberately NOT used (Disallow: *search?q=*). A later follow-up re-fetched the sitemap index, the product sitemap and the robots-advertised store sitemap, fetched 2 further product pages and 1 city page (8 requests).",
+      "sitemap_index_status": 200,
+      "product_sitemap_status": 200,
+      "product_sitemap_url_count": 13337,
+      "store_sitemap_status": 200,
+      "store_sitemap_url_count": 3669,
+      "store_locator_finding": "SOLVED. City pages (e.g. /s/de-DE/filialen/rostock/) expose exact store -> street + postcode + city via anchor aria-label 'Lidl Filiale {street}, {PLZ} {city}'. 10 Rostock stores extracted, each with a valid 5-digit postcode. Server-rendered, no JavaScript needed. No coordinates on the page, but the postcode is sufficient to join the plz_geocoord centroid dataset.",
+      "grocery_price_finding": "RULED OUT as a price source. The advertised 13,337-product catalog is ~99% non-food and alcohol (top own-brand families: esmara clothing 1746, livarno furniture 1138, parkside tools 1117, crivit sportswear 794, lupilu baby 657, silvercrest kitchenware 531). A genuine grocery (Belbake Bio Dinkel-Mehl, p10079984) returned gtin=null, price=null and offers.availability='InStoreOnly'. A non-food item (p100409619) returned price 9.99 + 2 GTINs and availability='OnlineOnly'. Derived rule: OnlineOnly => price and GTIN present; InStoreOnly (the real grocery range) => neither. Resolving a grocery price appears to require the store-selection flow via /user-api/* and /cqe/*, BOTH robots-disallowed and therefore NOT probed.",
+      "false_positive_warning": "Slug substring 'brot' does not mean bread. 'silvercrest-brot-frischhaltedose' (p100409619) is a bread-freshness storage container, not bread. Slug-based grocery classification must use whole-token matching."
+    }
+  ],
+  "request_breakdown": [
+    "6 x robots.txt (initial six chains)",
+    "3 x homepage characterisation (aldi.de, edeka.de, kaufland.de)",
+    "1 x netto.de redirect resolution",
+    "1 x netto.de robots.txt",
+    "3 x sitemap HEAD requests (lidl, rewe, netto)",
+    "1 x lidl.de sitemap index",
+    "1 x rewe.de sitemap GET (to confirm 403 was not a HEAD artifact)",
+    "1 x lidl.de product sitemap (254 KB gzipped, 13,337 product URLs)",
+    "1 x netto.de sitemap (65 KB, 560 URLs)",
+    "2 x lidl.de product pages",
+    "1 x rewe.de offers page (robots.txt explicitly Allow:s this path)",
+    "9 x HEAD requests to candidate online-shop domains",
+    "1 x aldi-nord.de robots.txt",
+    "1 x netto-online.de redirect HEAD",
+    "1 x aldi-nord.de sitemap index",
+    "1 x aldi-nord.de pages sitemap",
+    "1 x aldi-nord.de products sitemap (2,258 product URLs)",
+    "2 x aldi-nord.de product pages (original spike)",
+    "3 x aldi-nord.de product pages (follow-up extraction-robustness check: Weizenmehl, Bananen, Langkorn Reis)"
+  ]
+}

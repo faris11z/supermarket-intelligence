@@ -1,0 +1,368 @@
+{
+  "_provenance": {
+    "spike": "store-locator-and-lidl-catalog-followup",
+    "retrieved_utc": "2026-09-30T11:30:00Z",
+    "collected_by": "supermarket-intel-spike/0.1",
+    "purpose": "Test whether Lidl and Aldi Nord can supply (a) a machine-readable store locator and (b) a grocery price catalog. Resolves open questions 1 and 2 in docs/research/location-and-travel-feasibility.md.",
+    "method": "9 HTTP GETs total, all to paths advertised in lidl.de's own robots.txt sitemap, plus the store-detail URLs derived from that sitemap. curl only. No JavaScript executed, no headless browser, no authentication, no CAPTCHA handling, no bot-protection circumvention.",
+    "robots_txt": {
+      "url": "https://www.lidl.de/robots.txt",
+      "http_status": 200,
+      "product_path_allowed": true,
+      "paths_deliberately_NOT_requested": [
+        "/user-api/* (Disallow) - the per-user/store context API. Off-limits; NOT probed. This is almost certainly the path that resolves an InStoreOnly price once a store is selected, so it was NOT used.",
+        "/cqe/* (Disallow) - the price/query backend. Off-limits; NOT probed.",
+        "*search?q=* (Disallow) - onsite search. NOT used.",
+        "*idsOnly=*, *productsOnly=* (Disallow) - product-listing filters. NOT used.",
+        "/cc.js* and /cdn/assets/cwv/ (Disallow) - NOT requested."
+      ],
+      "crawl_delay_directive": "NONE present in robots.txt"
+    },
+    "extraction_path": "product: script[application/ld+json] -> @type=='Product'. stores: city page HTML -> a.store-tile-detail-page__link[href] + its aria-label attribute.",
+    "data_type": "DIRECTLY_OBSERVED",
+    "raw_artefact_policy": "The full sitemaps (1.4 MB product, 853 KB store) and retailer page HTML are copyrighted and bulky, so per the convention in data/raw/spike/README.md they are NOT committed. This file records the factual fields, the extraction rule, and sha256 digests so any finding can be re-verified."
+  },
+  "sitemap_index": {
+    "url": "https://www.lidl.de/static/sitemap.xml",
+    "http_status": 200,
+    "bytes": 593,
+    "sha256": "ed5a3b95a9e99e4b7ea5d0c949da7438cc5d7017827413a200ff075852e5f07e",
+    "children": [
+      "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+      "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz",
+      "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+      "https://www.lidl.de/cdn/assets/sitemaps/brands.xml",
+      "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml"
+    ],
+    "note": "The product sitemap path is /p/export/DE/de/... i.e. market-scoped. de-AT and de-CH equivalents are implied by the store sitemap's hreflang alternates but were NOT fetched."
+  },
+  "product_sitemap": {
+    "url": "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+    "http_status": 200,
+    "bytes_gz": 259840,
+    "bytes_uncompressed": 1465222,
+    "sha256_gz": "bc7feb57f2dd7bae4178e49aaacd7943960c77be93bf91273ec9447a2b7e0c5d",
+    "product_url_count": 13337,
+    "url_pattern": "https://www.lidl.de/p/{slug}/p{product_id}",
+    "product_id_prefixes": {
+      "1": 12972,
+      "8": 331,
+      "3": 34
+    },
+    "count_caveat": "This count was already recorded in the original spike (lidl_observed.json -> product_discovery.product_url_count = 13337). It is re-confirmed here, NOT a new figure."
+  },
+  "catalog_composition": {
+    "headline": "The advertised product catalog is a general-merchandise and alcohol catalog, not a grocery catalog. Genuine groceries are a negligible minority.",
+    "method": "Leading slug token classified as the product's own-brand family, then hand-mapped. Whole-token matching, not substring matching, to avoid false positives.",
+    "top_own_brand_families": {
+      "esmara": 1746,
+      "livarno": 1138,
+      "parkside": 1117,
+      "crivit": 794,
+      "lupilu": 657,
+      "silvercrest": 531,
+      "roba": 118,
+      "lego": 109,
+      "livergy": 99,
+      "wenko": 74,
+      "vileda": 69,
+      "cien": 61,
+      "philips": 56,
+      "einhell": 55,
+      "gardena": 50
+    },
+    "own_brand_family_meaning": {
+      "esmara": "clothing",
+      "livarno": "furniture/home",
+      "parkside": "tools/hardware",
+      "crivit": "sportswear",
+      "lupilu": "baby",
+      "silvercrest": "kitchenware/cookware (NOT food)",
+      "roba": "furniture",
+      "lego": "toys",
+      "livergy": "clothing",
+      "wenko": "housewares",
+      "vileda": "cleaning",
+      "cien": "beauty",
+      "philips": "small appliances",
+      "einhell": "power tools",
+      "gardena": "garden"
+    },
+    "non_food_share_of_top_15_brands": "roughly 7300 of 13337 (~55%) from the top non-food own-brand families alone, before counting alcohol, third-party brands, clothing, baby, beauty and garden",
+    "distinct_leading_tokens": 1324,
+    "rough_category_estimate": {
+      "alcohol": "~713 (5.3%)",
+      "general_merchandise_and_non_food": "the overwhelming majority",
+      "genuine_grocery": "<1% (a few hundred at most)"
+    },
+    "known_false_positive_warning": "The slug token 'brot' is NOT reliable for bread. 'silvercrest-brot-frischhaltedose' (p100409619) is a bread-freshness STORAGE CONTAINER, a 9.99 EUR non-food item. Any grocery classifier built on slug substrings will produce silent false positives like this."
+  },
+  "grocery_price_availability": {
+    "headline": "Real grocery products return NO price and NO GTIN in server-rendered HTML. The price-bearing pages are the non-food/alcohol webshop range.",
+    "tested": [
+      {
+        "url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984",
+        "http_status": 200,
+        "name_from_jsonld": "Belbake Bio Dinkel-Mehl Vollkorn, Bioland",
+        "sku": "10079984",
+        "gtin": null,
+        "price": null,
+        "raw_price_token_in_html": "\"price\":null",
+        "availability": "InStoreOnly",
+        "interpretation": "A genuine grocery. No price, no GTIN in server HTML. Offer availability is InStoreOnly, i.e. Lidl only reveals a price after a store is selected."
+      },
+      {
+        "url": "https://www.lidl.de/p/silvercrest-brot-frischhaltedose/p100409619",
+        "http_status": 200,
+        "name_from_jsonld": "Brot-Frischhaltedose",
+        "sku": "100409619",
+        "gtin": [
+          "4054599527925",
+          "4054599527932"
+        ],
+        "price": 9.99,
+        "availability": "OnlineOnly",
+        "interpretation": "A NON-food item (storage box) that nonetheless carries price + 2 GTINs. Demonstrates the GTIN and price fields are real and parseable, but only populated for the OnlineOnly range."
+      }
+    ],
+    "derived_rule": "OnlineOnly => price and GTIN present in server HTML. InStoreOnly => price is null and no GTIN. Lidl's actual grocery range is InStoreOnly.",
+    "consequence": "Obtaining a real Lidl grocery price appears to require the store-selection flow, which resolves through /user-api/* and /cqe/*. BOTH ARE DISALLOW-ED IN robots.txt and were therefore NOT probed. This is a hard stop under our constraints, not an obstacle to engineer around.",
+    "status": "CONCLUSIVE - do not invest further in Lidl as a price source"
+  },
+  "store_locator": {
+    "headline": "SOLVED for Lidl. City pages yield exact store -> street + postcode + city mappings, server-rendered and machine-readable. No coordinates, but postcodes are enough to join the PLZ centroid dataset.",
+    "store_sitemap": {
+      "url": "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+      "http_status": 200,
+      "bytes": 853208,
+      "sha256": "cf931ce7b73eaf60831cea1a84102fc5e2046f4cfe99a64759e7c7a0b718c5c4",
+      "url_count": 3669,
+      "store_detail_url_count": 3665,
+      "city_index_page_count": 395,
+      "url_pattern": "https://www.lidl.de/s/de-DE/filialen/{city-slug}/{street-slug}/",
+      "coverage_caveat": "Coverage is UNEVEN. /filialen/berlin/ exists as a city page but has ZERO store-detail URLs in the sitemap, whereas /filialen/rostock/ has many. The sitemap therefore must not be assumed to be a complete store registry."
+    },
+    "extraction_rule": "On a city page, each store is one anchor: <a href=\"/s/de-DE/filialen/{city}/{street}/\" aria-label=\"Lidl Filiale {street}, {PLZ} {city}\" class=\"store-tile-detail-page__link\">",
+    "verified_on_city_page": {
+      "url": "https://www.lidl.de/s/de-DE/filialen/rostock/",
+      "http_status": 200,
+      "bytes": 243047,
+      "sha256": "4831e220463597ac226bff6489d928b6768bf2c1e73ee8b079df640ddd6e5a19",
+      "stores_extracted": 10,
+      "absent_from_page": [
+        "latitude",
+        "longitude",
+        "openingHours",
+        "JSON-LD",
+        "schema.org markup"
+      ]
+    },
+    "records": [
+      {
+        "street": "Schiffbauerring 1",
+        "postcode": "18109",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/schiffbauerring-1/"
+      },
+      {
+        "street": "Maxim-Gorki-Str. 66/67",
+        "postcode": "18106",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/maxim-gorki-str-66-67/"
+      },
+      {
+        "street": "Güstrower Str. 8",
+        "postcode": "18109",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/guestrower-str-8/"
+      },
+      {
+        "street": "Tschaikowskistr. 39",
+        "postcode": "18069",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/tschaikowskistr-39/"
+      },
+      {
+        "street": "Stephan-Jantzen-Ring 50 a",
+        "postcode": "18106",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/stephan-jantzen-ring-50-a/"
+      },
+      {
+        "street": "Gaffelschoner Weg 15",
+        "postcode": "18055",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/gaffelschoner-weg-15/"
+      },
+      {
+        "street": "Warnowallee 20 a",
+        "postcode": "18107",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/warnowallee-20-a/"
+      },
+      {
+        "street": "Doberaner Str. 144",
+        "postcode": "18057",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/doberaner-str-144/"
+      },
+      {
+        "street": "Hinrichsdorfer Straße 13a",
+        "postcode": "18146",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/hinrichsdorfer-strasse-13a/"
+      },
+      {
+        "street": "Neubrandenburger Str. 10-11",
+        "postcode": "18055",
+        "city": "Rostock",
+        "url": "/s/de-DE/filialen/rostock/neubrandenburger-str-10-11/"
+      }
+    ]
+  },
+  "requests_made": [
+    {
+      "n": 1,
+      "url": "https://www.lidl.de/static/sitemap.xml",
+      "status": 200,
+      "bytes": 593
+    },
+    {
+      "n": 2,
+      "url": "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+      "status": 200,
+      "bytes": 259840
+    },
+    {
+      "n": 3,
+      "url": "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+      "status": 200,
+      "bytes": 853208
+    },
+    {
+      "n": 4,
+      "url": "https://www.lidl.de/p/x/p10079984",
+      "status": 301,
+      "note": "ID-only path redirects; the full slug is required."
+    },
+    {
+      "n": 5,
+      "url": "https://www.lidl.de/p/x/p100409619",
+      "status": 301,
+      "note": "ID-only path redirects; the full slug is required."
+    },
+    {
+      "n": 6,
+      "url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984",
+      "status": 200,
+      "bytes": 378932
+    },
+    {
+      "n": 7,
+      "url": "https://www.lidl.de/p/silvercrest-brot-frischhaltedose/p100409619",
+      "status": 200,
+      "bytes": 443832
+    },
+    {
+      "n": 8,
+      "url": "https://www.lidl.de/s/de-DE/filialen/rostock/",
+      "status": 200,
+      "bytes": 243047
+    },
+    {
+      "n": 9,
+      "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/",
+      "status": 308,
+      "note": "redirect"
+    },
+    {
+      "n": 10,
+      "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock.html",
+      "status": 404,
+      "note": "Aldi has no city index page"
+    },
+    {
+      "n": 11,
+      "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/lortzingstrasse-19a/3180621.html",
+      "status": 200,
+      "bytes": 182389,
+      "note": "store detail, 3s after the previous request"
+    }
+  ],
+  "request_count": 11,
+  "conclusions_for_the_project": [
+    "Lidl is RULED OUT as a price source. Its advertised catalog is ~99% non-food and alcohol, and its real grocery prices are only reachable through robots-disallowed endpoints.",
+    "Store locators are now SOLVED for 2 of 6 chains. Lidl gives postcode via city pages; Aldi Nord gives lat/lng + postcode + opening hours + regional banner via store pages. Neither needs an external gazetteer.",
+    "The per-banner assortment question is ANSWERED for Aldi Nord: each store names its own Regionalgesellschaft in openingHoursNotes, so banner-level modelling is derivable from the locator payload.",
+    "Coordinates being real store positions rather than postcode centroids is a genuine accuracy win for the travel-cost model, and it is the strongest argument so far for the total-cost framing.",
+    "The price side remains the binding constraint at 1 of 6 chains, and it is now known to be a data-availability wall rather than a scraping-difficulty wall."
+  ],
+  "aldi_nord_store_page": {
+    "headline": "SOLVED for Aldi Nord too, and better than Lidl. Store pages expose lat/lng, postcode, opening hours AND the regional banner (Regionalgesellschaft) in one server-rendered payload. The postcode that is missing from Aldi's sitemap IS on the store page.",
+    "probes": [
+      {
+        "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/",
+        "status": 308,
+        "note": "redirects to .../rostock.html"
+      },
+      {
+        "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock.html",
+        "status": 404,
+        "note": "no city index page exists; Aldi has no Lidl-style city listing route"
+      },
+      {
+        "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/lortzingstrasse-19a/3180621.html",
+        "status": 200,
+        "bytes": 182389
+      }
+    ],
+    "extraction_rule": "__NEXT_DATA__ script -> props.pageProps.storeDetail (a JS-string-escaped JSON object nested inside a stringified payload; it must be un-escaped and brace-balanced before json.loads). The same object is NOT exposed as application/ld+json: the page has 8 ld+json blocks but none is a Store/LocalBusiness entity.",
+    "observed_store_detail_fields": {
+      "id": 3180621,
+      "identifier": "DE029055",
+      "googlePlaceId": "ChIJffEWgSJWrEcRCEkomF2INqg",
+      "lat": 54.16939,
+      "lng": 12.083483,
+      "name": "ALDI Nord",
+      "country": "DE",
+      "city": "Rostock",
+      "province": "Mecklenburg-Vorpommern",
+      "streetAndNumber": "Lortzingstraße 19a",
+      "zip": "18119",
+      "businessId": 1312729,
+      "openingHours": "7 entries, {dayOfWeek, from1, to1}; Mon-Thu 07:00-20:00",
+      "specialOpeningHours": "dated closures, e.g. 2026-10-03, 2026-10-31, 2026-12-25, 2026-12-26",
+      "openingHoursNotes": "Regionalgesellschaft: ALDI GmbH & Co. Kommanditgesellschaft, Anklamer Str. 9, 17126 Jarmen",
+      "services": [
+        "Backstation",
+        "Parkplatz",
+        "Einkaufswagen",
+        "Kindereinkaufswagen",
+        "Einkaufswagen mit Babelschale",
+        "Barrierefrei zugänglich",
+        "Packstation"
+      ],
+      "paymentOptions": [
+        "V-Pay",
+        "AMEX",
+        "MAESTRO",
+        "GOOGLEPAY",
+        "DISCOVER",
+        "MASTERCARD",
+        "VISA",
+        "APPLEPAY",
+        "CASH",
+        "ALDI Geschenkkarte",
+        "DINERSCLUB",
+        "EC"
+      ],
+      "photos": "list with publicUrl, served from locator.uberall.com"
+    },
+    "three_findings": {
+      "postcode_present": "VERIFIED. zip='18119' on the store page, absent from the sitemap URL. Combined with the city+street slug in the sitemap this is a complete store->postcode mapping, so Aldi needs no external gazetteer either.",
+      "coordinates_present": "VERIFIED. lat/lng are exact store coordinates, not postcode centroids. Cross-checked against the plz_geocoord file: the Lortzingstr. store sits 0.56 km from the 18119 centroid, and 2.2-10.9 km from the neighbouring Rostock centroids it was compared against. This is materially better than centroid-based placement, because a postcode centroid in a city like Rostock can be kilometres from the shop.",
+      "banner_present": "VERIFIED, and this closes open question 2. openingHoursNotes names the operating Regionalgesellschaft (here ALDI GmbH & Co. Kommanditgesellschaft, Jarmen). A store therefore identifies its own legal entity and, by extension, its regional assortment. Banner-level assortment modelling is answerable from the locator payload without any additional source."
+    },
+    "important_negative": "There is NO city index page for Aldi Nord (/filialen-und-oeffnungszeiten/rostock.html is 404). Enumeration must therefore come from the advertised store sitemap, not from a crawl of city pages. This is the structural difference from Lidl, whose city pages are the reliable enumeration route."
+  }
+}
