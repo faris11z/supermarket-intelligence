@@ -3,9 +3,9 @@
     "spike": "supermarket-data-acquisition",
     "compiled_utc": "2026-09-30T09:00:00Z",
     "purpose": "Record of every HTTP request made during this feasibility spike, and the exact access status of each target domain.",
-    "total_requests": 53,
+    "total_requests": 67,
     "product_detail_pages_fetched": 7,
-    "note_on_counts": "Original spike made 39 requests across 4 product pages (2 Aldi Nord, 2 Lidl). A follow-up extraction-robustness check made 3 further requests (3 additional Aldi Nord products: Weizenmehl, Bananen, Langkorn Reis) -> 42 requests / 5 Aldi Nord product pages. The Lidl/Aldi store-locator follow-up made 11 further requests, of which 2 were product pages -> 53 requests / 7 product pages (5 Aldi Nord, 2 Lidl) and 2 store pages. Counts here are cumulative. CORRECTION: earlier revisions of this file stated \"5 product pages total\", which conflated the Aldi-only count with the across-chain total. The correct totals are 7 product pages and 53 requests.",
+    "note_on_counts": "Original spike made 39 requests across 4 product pages (2 Aldi Nord, 2 Lidl). A follow-up extraction-robustness check made 3 further requests (3 additional Aldi Nord products: Weizenmehl, Bananen, Langkorn Reis) -> 42 requests / 5 Aldi Nord product pages. The Lidl/Aldi store-locator follow-up made 11 further requests, of which 2 were product pages -> 53 requests / 7 product pages (5 Aldi Nord, 2 Lidl) and 2 store pages. A licensing review made 14 further requests (7 of them redirected-then-discarded URL probes, see legal_review_requests) -> 67 requests. Counts here are cumulative. CORRECTION: earlier revisions of this file stated \"5 product pages total\", which conflated the Aldi-only count with the across-chain total. The correct totals are 7 product pages and 53 requests.",
     "constraints_upheld": {
       "large_scale_crawling": "NONE - 53 requests total across 6 chains",
       "javascript_execution": "NONE - curl only, no headless browser",
@@ -14,7 +14,104 @@
       "proxy_or_ip_rotation": "NONE",
       "retry_after_block": "NONE - blocked domains were NOT retried with altered request characteristics",
       "private_api_reverse_engineering": "NONE - only robots.txt-advertised sitemaps and ordinary page HTML were used"
-    }
+    },
+    "legal_review_requests": [
+      {
+        "n": 54,
+        "url": "https://www.aldi-nord.de/imprint",
+        "status": 308,
+        "purpose": "legal probe: guessed imprint path",
+        "note": "redirect to /imprint.html"
+      },
+      {
+        "n": 55,
+        "url": "https://www.aldi-nord.de/legal-notice/privacy",
+        "status": 308,
+        "purpose": "legal probe",
+        "note": "redirect to /legal-notice/privacy.html"
+      },
+      {
+        "n": 56,
+        "url": "https://www.aldi-nord.de/terms-of-use",
+        "status": 308,
+        "purpose": "legal probe",
+        "note": "redirect to /terms-of-use.html"
+      },
+      {
+        "n": 57,
+        "url": "https://www.aldi-nord.de/imprint.html",
+        "status": 404,
+        "purpose": "legal probe",
+        "note": "guessed path does not exist"
+      },
+      {
+        "n": 58,
+        "url": "https://www.aldi-nord.de/legal-notice/privacy.html",
+        "status": 404,
+        "purpose": "legal probe",
+        "note": "guessed path does not exist"
+      },
+      {
+        "n": 59,
+        "url": "https://www.aldi-nord.de/terms-of-use.html",
+        "status": 404,
+        "purpose": "legal probe",
+        "note": "guessed path does not exist"
+      },
+      {
+        "n": 60,
+        "url": "https://www.aldi-nord.de/imprint",
+        "status": 200,
+        "purpose": "re-requested only to read the redirect target; body discarded",
+        "note": "no content retrieved"
+      },
+      {
+        "n": 61,
+        "url": "https://www.aldi-nord.de/legal-notice/privacy",
+        "status": 200,
+        "purpose": "re-requested only to read the redirect target; body discarded"
+      },
+      {
+        "n": 62,
+        "url": "https://www.aldi-nord.de/terms-of-use",
+        "status": 200,
+        "purpose": "re-requested only to read the redirect target; body discarded"
+      },
+      {
+        "n": 63,
+        "url": "https://www.aldi-nord.de/",
+        "status": 200,
+        "purpose": "locate legal links in footer",
+        "note": "footer is client-rendered; page contains only 6 hrefs, none legal"
+      },
+      {
+        "n": 64,
+        "url": "https://www.aldi-nord.de/.aldi-nord-sitemap.xml",
+        "status": 200,
+        "purpose": "enumerate published pages instead of guessing paths"
+      },
+      {
+        "n": 65,
+        "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-pages.xml",
+        "status": 200,
+        "purpose": "enumerate published pages",
+        "note": "649 URLs; 5 datenschutz + 7 promotion-terms; no general ToS, no Impressum"
+      },
+      {
+        "n": 66,
+        "url": "https://www.aldi-nord.de/kundeninformationen/datenschutz.html",
+        "status": 200,
+        "purpose": "read GDPR privacy notice for data-reuse terms",
+        "note": "text is CMS-fetched client-side; 36 chars of body text server-rendered; no reuse clause retrievable without JS"
+      },
+      {
+        "n": 67,
+        "url": "https://www.aldi-nord.de/kundeninformationen/teilnahmebedingungen-agb.html",
+        "status": 200,
+        "purpose": "read T&Cs for data-reuse terms",
+        "note": "apiData is null; content not in __NEXT_DATA__; page is promotion/lottery T&Cs, not general site terms"
+      }
+    ]
   },
   "user_agent": "supermarket-intel-spike/0.1 (feasibility research; single-page samples only)",
   "domains": [
@@ -43,7 +140,15 @@
       "action_taken": "Followed robots.txt-advertised sitemaps; fetched 5 product pages from the allowed /produkt/ path (2 in the original spike, 3 in the follow-up robustness check) and 1 store detail page.",
       "store_locator_finding": "SOLVED, and richer than expected. Store pages expose props.pageProps.storeDetail in __NEXT_DATA__ with lat 54.16939, lng 12.083483, zip 18119 (the postcode the sitemap URL omits), 7 openingHours entries, dated specialOpeningHours, services and paymentOptions. Coordinates are exact store positions, not postcode centroids: 0.56 km from the 18119 centroid but 2.2-10.9 km from neighbouring Rostock centroids. Aldi has NO city index page (/filialen-und-oeffnungszeiten/rostock.html is 404; the bare city path 308-redirects to it), so enumeration must use the store sitemap, unlike Lidl.",
       "banner_finding": "openingHoursNotes names the operating Regionalgesellschaft ('ALDI GmbH & Co. Kommanditgesellschaft, Anklamer Str. 9, 17126 Jarmen'). Each store therefore identifies its own regional legal entity, so per-banner assortment modelling is derivable from the locator payload. Closes open question 2 for Aldi Nord.",
-      "negative_finding": "8 application/ld+json blocks are present but none is a Store/LocalBusiness entity. Address and opening hours exist only inside the Next.js payload, so a generic schema.org harvest would find nothing on Aldi Nord."
+      "negative_finding": "8 application/ld+json blocks are present but none is a Store/LocalBusiness entity. Address and opening hours exist only inside the Next.js payload, so a generic schema.org harvest would find nothing on Aldi Nord.",
+      "licensing_review": {
+        "status": "UNRESOLVED - and not resolvable from the website",
+        "pages_sitemap_urls": 649,
+        "what_is_published": "5 GDPR/privacy pages and 7 promotion or lottery terms pages (Gewinnspiele, E-Ladesaeulen, social channels, Bollerwagen). No general Terms of Use and no Impressum appear in the sitemap.",
+        "blocking_problem": "The legal text is CMS-fetched client-side. The Datenschutz page server-renders only 36 characters of body text and the AGB page has apiData=null, so the actual clauses could not be read without executing JavaScript. Executing JS was out of scope for this research phase.",
+        "conclusion": "There is no published document granting or denying data reuse, and no document to seek permission from. German law applies by default regardless: UrhG section 87b gives a database maker with a substantial investment an exclusive right to reproduce substantial parts of the database, and absent any grant the default is all-rights-reserved. robots.txt permission is a crawl instruction, not a licence.",
+        "recommendation": "This needs actual legal advice, not more fetching. Until it is resolved, the defensible position is: research and prototype on locally cached observations, no redistribution of retailer data, and no production ingestion."
+      }
     },
     {
       "domain": "www.edeka.de",

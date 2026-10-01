@@ -4,7 +4,7 @@ Observed data from the supermarket data-acquisition spike (2026-09-30).
 
 ## Read this first
 
-This directory contains **directly observed** fields only, captured with **53 HTTP
+This directory contains **directly observed** fields only, captured with **67 HTTP
 requests total** across six chains. Nothing here is synthetic, inferred-as-fact, or
 hand-written. Where a value is absent, it is recorded as `null` with a `*_note`
 explaining the absence, rather than being filled in.
@@ -52,6 +52,11 @@ evidence that a block occurred.
 * **The Lidl records are wine and a cushion, not groceries.** See section 2 of
   `docs/research/supermarket-data-acquisition-spike.md`. They characterise the *page
   format* only and must not be read as grocery coverage.
+* **Data licensing is unresolved and is the highest-priority open item.** Aldi Nord
+  publishes no terms of use and no Impressum; the legal text is client-rendered and was not
+  retrievable without executing JavaScript. Absence of a prohibition is not permission, and
+  robots.txt is not a licence. These observations are cached here for research and
+  prototyping only. See `licensing_review` in `access_log.json`.
 * **No GTIN/EAN was observed on Aldi Nord pages.** Whether a barcode exists elsewhere
   in the site is **Unknown** - `/mds/` is robots-disallowed and was never requested.
 * **The 5 Aldi Nord pages span 4 categories but 4 distinct optional-key schemas.**
