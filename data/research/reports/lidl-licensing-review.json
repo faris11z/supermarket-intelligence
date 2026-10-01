@@ -1,0 +1,96 @@
+{
+  "source": "lidl",
+  "date_utc": "2026-10-01T09:58:10Z",
+  "documents_checked": [
+    {
+      "name": "terms_onlineshop",
+      "url": "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181",
+      "status_code": 200,
+      "result": "success",
+      "sha256": "544df90334147dbb20d363d41e616f2059e662a5bea26a89e678ead5264e8b80",
+      "evidence_path": "data/research/raw/lidl/www.lidl.de_c_allgemeine-geschaeftsbedingungen-onlineshop_s10005181-544df9033414.html",
+      "text_bytes": 27719,
+      "text_retrievable": true,
+      "markers_present": [
+        "gewerblich",
+        "geschäftsbedingungen",
+        "inhalte"
+      ],
+      "excerpt": "allgemeine geschäftsbedingungen onlineshop - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoir",
+      "reuse_topic_markers": [],
+      "addresses_data_reuse": false
+    },
+    {
+      "name": "impressum",
+      "url": "https://www.lidl.de/c/impressum/s10005238",
+      "status_code": 200,
+      "result": "success",
+      "sha256": "4de8d8e5c1c9f660da229862bc291f77c4a6dcfbb969f4239b88067d33af2ea5",
+      "evidence_path": "data/research/raw/lidl/www.lidl.de_c_impressum_s10005238-4de8d8e5c1c9.html",
+      "text_bytes": 6409,
+      "text_retrievable": true,
+      "markers_present": [
+        "geschäftsbedingungen"
+      ],
+      "excerpt": "impressum - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & spielzeug sale li",
+      "reuse_topic_markers": [],
+      "addresses_data_reuse": false
+    },
+    {
+      "name": "legal_information",
+      "url": "https://www.lidl.de/c/rechtliche-informationen/s10005200",
+      "status_code": 200,
+      "result": "success",
+      "sha256": "5459983af488fcc78e09ecb905d6bc864515dfc516d3260bf411a12b24083f5f",
+      "evidence_path": "data/research/raw/lidl/www.lidl.de_c_rechtliche-informationen_s10005200-5459983af488.html",
+      "text_bytes": 4048,
+      "text_retrievable": true,
+      "markers_present": [
+        "geschäftsbedingungen"
+      ],
+      "excerpt": "rechtliche informationen - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & sp",
+      "reuse_topic_markers": [],
+      "addresses_data_reuse": false
+    },
+    {
+      "name": "privacy",
+      "url": "https://www.lidl.de/c/datenschutz/s10005389",
+      "status_code": 200,
+      "result": "success",
+      "sha256": "e7e1a573e692ffbe48bd02c393253536423b24feeb0adfe00c3e220aff9a3fcf",
+      "evidence_path": "data/research/raw/lidl/www.lidl.de_c_datenschutz_s10005389-e7e1a573e692.html",
+      "text_bytes": 13690,
+      "text_retrievable": true,
+      "markers_present": [],
+      "excerpt": "datenschutz - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & spielzeug sale ",
+      "reuse_topic_markers": [],
+      "addresses_data_reuse": false
+    },
+    {
+      "name": "withdrawal_rights",
+      "url": "https://www.lidl.de/c/widerrufsrecht-onlineshop/s10005170",
+      "status_code": 200,
+      "result": "success",
+      "sha256": "863c5c8b0e3ccbc1c8368895196776d749971b0e5aaf0cb795d2fc9f06ce7fe4",
+      "evidence_path": "data/research/raw/lidl/www.lidl.de_c_widerrufsrecht-onlineshop_s10005170-863c5c8b0e3c.html",
+      "text_bytes": 15761,
+      "text_retrievable": true,
+      "markers_present": [
+        "geschäftsbedingungen"
+      ],
+      "excerpt": "widerrufsrecht onlineshop - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & s",
+      "reuse_topic_markers": [],
+      "addresses_data_reuse": false
+    }
+  ],
+  "explicit_reuse_permission_found": false,
+  "licence_found": false,
+  "terms_found": true,
+  "terms_url": "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181",
+  "terms_addresses_data_reuse": false,
+  "database_rights_discussed": "unknown",
+  "api_developer_terms_found": null,
+  "conclusion": "unresolved",
+  "legal_advice_required": true,
+  "notes": "Method: enumerated the 2085 URLs in Lidl's advertised pages sitemap, filtered for legal keywords, fetched the 5 most relevant documents. No URL was guessed. 5 of 5 returned retrievable text, unlike Aldi's client-rendered legal pages. The online-shop AGB is a consumer purchase contract (ordering, prices, payment, withdrawal, returns). It contains no clause on automated extraction, scraping, or reuse of price/content data, and no clause expressly prohibiting it either. The only commercial clause located concerns BULK RESALE OF PURCHASED GOODS ('gewerbliche Weiterverkauf'), which is a purchasing term, not a data-reuse term. REUSE PERMISSION REMAINS UNKNOWN. Absence of a clause is not permission, and it is not prohibition. This is a legal question under German Datenbankherstellerrecht and UrhG and requires advice before any build."
+}

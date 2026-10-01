@@ -1,0 +1,376 @@
+{
+  "entries": {
+    "data/research/raw/aldi_nord/www.aldi-nord.de_.aldi-nord-sitemap.xml.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_.aldi-nord-sitemap.xml-7116d3e1abf4.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "7116d3e1abf438169279f78986b1e014f1e1b65685914fb9d1953c5c442d6033",
+      "size_bytes": 564,
+      "url": "https://www.aldi-nord.de/.aldi-nord-sitemap.xml"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_filialen-und-oeffnungszeiten_rostock_lortzingstrasse-19a_3180621.html.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_filialen-und-oeffnungszeiten_rostock_lortzingstrasse-19a_3180621.html-b30a0a4d3bd5.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "b30a0a4d3bd5e11a14befceb3eeaad21ba6cef7369fc45f8f0214b2a35f2832c",
+      "size_bytes": 224366,
+      "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/lortzingstrasse-19a/3180621.html"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_bananen-6151.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_bananen-6151-ac3df2e12eac.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "ac3df2e12eacde2ed601fe20a292c70fb67f81644615d578b12b9735d42d7cff",
+      "size_bytes": 76205,
+      "url": "https://www.aldi-nord.de/produkt/bananen-6151"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_frische-milch-9545.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_frische-milch-9545-2ce0d407beaf.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "2ce0d407beaffd60830d27149766338aecec586c35e3de503d5197949cb6ca18",
+      "size_bytes": 75977,
+      "url": "https://www.aldi-nord.de/produkt/frische-milch-9545"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_haehnchenbrustfilet-teilstuecke-8998.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_haehnchenbrustfilet-teilstuecke-8998-b498868dc9cd.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "b498868dc9cdcdbd65fe2151380ae04c1c70170f5db8b1f45905e883d06d7265",
+      "size_bytes": 76487,
+      "url": "https://www.aldi-nord.de/produkt/haehnchenbrustfilet-teilstuecke-8998"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_langkorn-reis-5474.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_langkorn-reis-5474-f93ad85c41b0.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "f93ad85c41b0fab1cce9d88b820f5e894380bd6d16420b9202217ba5cddeaf55",
+      "size_bytes": 2040,
+      "url": "https://www.aldi-nord.de/produkt/langkorn-reis-5474"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_weizenmehl-510.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_produkt_weizenmehl-510-1d204bb96b3e.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "1d204bb96b3e966e897d92d9f373666d1865970b59a6c70a9e04546dc9db4122",
+      "size_bytes": 76180,
+      "url": "https://www.aldi-nord.de/produkt/weizenmehl-510"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_robots.txt.txt": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_robots.txt-78ba4856c6b4.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "78ba4856c6b40b9bb485c6c57414adb6ad89b3383c77beacc391bb509362d71a",
+      "size_bytes": 337,
+      "url": "https://www.aldi-nord.de/robots.txt"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-faq.xml.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-faq.xml-502f7d3dec75.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "502f7d3dec756ee7257c2da32915c88196822e6aca087813aff1a8411bca23b9",
+      "size_bytes": 1587,
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-faq.xml"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-pages.xml.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-pages.xml-6768524689f5.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "6768524689f5a69d5b5e6db96db88e0e56141470639a9b3f5608920ea85bd628",
+      "size_bytes": 150510,
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-pages.xml"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-products.xml.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-products.xml-7fd212c79765.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "7fd212c79765463d4f47695b8936a95f40e97d98b7b17935337d95c158874738",
+      "size_bytes": 409109,
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-products.xml"
+    },
+    "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-stores.xml.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/aldi_nord/www.aldi-nord.de_sitemaps_.aldi-nord-sitemap-stores.xml-0420f09d30c4.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "0420f09d30c4ef1dfd6d1c76080c096458184935d912c1a881150a26f699a00c",
+      "size_bytes": 482709,
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-stores.xml"
+    },
+    "data/research/raw/lidl/www.lidl.de_c_allgemeine-geschaeftsbedingungen-onlineshop_s10005181.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_c_allgemeine-geschaeftsbedingungen-onlineshop_s10005181-c19b5000f869.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "c19b5000f869afd61fe7a10e92ca892f74aa612de05b13f1590fcb3832794f99",
+      "size_bytes": 254136,
+      "url": "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181"
+    },
+    "data/research/raw/lidl/www.lidl.de_c_datenschutz_s10005389.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_c_datenschutz_s10005389-7a823bf6f7fb.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "7a823bf6f7fb10557ef289b8348a39f4585376844454eaa81791722115fda3f7",
+      "size_bytes": 187918,
+      "url": "https://www.lidl.de/c/datenschutz/s10005389"
+    },
+    "data/research/raw/lidl/www.lidl.de_c_impressum_s10005238.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_c_impressum_s10005238-936a711b9a3f.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "936a711b9a3f47cff1e77651d5bc0218a8997ab285b9b0329f7c412de1d5ee57",
+      "size_bytes": 193380,
+      "url": "https://www.lidl.de/c/impressum/s10005238"
+    },
+    "data/research/raw/lidl/www.lidl.de_c_rechtliche-informationen_s10005200.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_c_rechtliche-informationen_s10005200-86bebdc8849f.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "86bebdc8849f55e5bb9b5cf6f34f83633ae2e4a74f8f92a1cc4b71debcdebf19",
+      "size_bytes": 170967,
+      "url": "https://www.lidl.de/c/rechtliche-informationen/s10005200"
+    },
+    "data/research/raw/lidl/www.lidl.de_c_widerrufsrecht-onlineshop_s10005170.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_c_widerrufsrecht-onlineshop_s10005170-e714c8e0289c.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "e714c8e0289c78bb38aa7fb05740432d4ade46ec7bea462ffd71d9773e1e3b8c",
+      "size_bytes": 208037,
+      "url": "https://www.lidl.de/c/widerrufsrecht-onlineshop/s10005170"
+    },
+    "data/research/raw/lidl/www.lidl.de_cdn_assets_sitemaps_brands.xml.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_cdn_assets_sitemaps_brands.xml-bcc760c051fd.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "bcc760c051fd5eb4d05a282f7f66922d77f20065075fe9b365c457721d75c927",
+      "size_bytes": 56304,
+      "url": "https://www.lidl.de/cdn/assets/sitemaps/brands.xml"
+    },
+    "data/research/raw/lidl/www.lidl.de_cdn_assets_sitemaps_nqps.xml.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_cdn_assets_sitemaps_nqps.xml-f9c7173ec490.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "f9c7173ec4906935bdcc5afa920feea0eda93a312e99b64465ba526f0ccbb003",
+      "size_bytes": 5305,
+      "url": "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml"
+    },
+    "data/research/raw/lidl/www.lidl.de_explore_assets_s_pages_de-DE_de.xml.gz.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_explore_assets_s_pages_de-DE_de.xml.gz-ce98302db441.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "ce98302db441d28c7f150047d6572cddc1d1afef60ecb69a7972b5469e4fb864",
+      "size_bytes": 286507,
+      "url": "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_belbake-bio-dinkel-mehl-vollkorn-bioland_p10079984.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_belbake-bio-dinkel-mehl-vollkorn-bioland_p10079984-2bd1d9e32b78.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "2bd1d9e32b78c5b09ec0c3b18b5bafd5637b0ab54296ac2f803e3d7210db5052",
+      "size_bytes": 378932,
+      "url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_belbake-dinkelmehl-vollkorn_p10079985.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_belbake-dinkelmehl-vollkorn_p10079985-6789cead14c1.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "6789cead14c184fbc5fa8c7492ce686acadbe4cc7ac102e86b88444c2658eea8",
+      "size_bytes": 378581,
+      "url": "https://www.lidl.de/p/belbake-dinkelmehl-vollkorn/p10079985"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_crownfield-bio-knusper-muesli-beeren_p10079987.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_crownfield-bio-knusper-muesli-beeren_p10079987-506a54759803.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "506a54759803301c63ae66bb706111afeed828fe084ee6d5d376c442d22594c7",
+      "size_bytes": 379026,
+      "url": "https://www.lidl.de/p/crownfield-bio-knusper-muesli-beeren/p10079987"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_crownfield-knusper-weniger-suess-hafer-muesli_p10079986.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_crownfield-knusper-weniger-suess-hafer-muesli_p10079986-31b2b1f5d455.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "31b2b1f5d455fd578b4283a3bf927006249f392a10476cf832674e030d96af62",
+      "size_bytes": 379349,
+      "url": "https://www.lidl.de/p/crownfield-knusper-weniger-suess-hafer-muesli/p10079986"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_export_DE_de_product_sitemap.xml.gz.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_export_DE_de_product_sitemap.xml.gz-2db6a7e946e9.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "2db6a7e946e96ef30e50112c9caf87dfa615e5a0c94ac6eea132ef5b7b2d6d7b",
+      "size_bytes": 1465222,
+      "url": "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz"
+    },
+    "data/research/raw/lidl/www.lidl.de_p_grafschafter-brunchmix-broetchen_p10079988.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/lidl/www.lidl.de_p_grafschafter-brunchmix-broetchen_p10079988-3ae5236dcf53.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "3ae5236dcf5353716638d6863dc424927392b000fe8d7679728022e99cbaaae0",
+      "size_bytes": 379013,
+      "url": "https://www.lidl.de/p/grafschafter-brunchmix-broetchen/p10079988"
+    },
+    "data/research/raw/lidl/www.lidl.de_robots.txt.txt": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_robots.txt-221324c16f52.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "221324c16f525a4dff9554f2d3d3401f225aa00046efd9fdaa96f203bb52315a",
+      "size_bytes": 312,
+      "url": "https://www.lidl.de/robots.txt"
+    },
+    "data/research/raw/lidl/www.lidl.de_s_de-DE_filialen_sitemap.xml.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_s_de-DE_filialen_sitemap.xml-cf931ce7b73e.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "cf931ce7b73eaf60831cea1a84102fc5e2046f4cfe99a64759e7c7a0b718c5c4",
+      "size_bytes": 853208,
+      "url": "https://www.lidl.de/s/de-DE/filialen/sitemap.xml"
+    },
+    "data/research/raw/lidl/www.lidl.de_static_sitemap.xml.xml": {
+      "action": "retired_duplicate",
+      "current_path": "data/research/raw/lidl/www.lidl.de_static_sitemap.xml-ed5a3b95a9e9.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "byte-identical duplicate of a content-addressed file that is retained; deleted and tombstoned rather than kept under a second name.",
+      "sha256_decoded": "ed5a3b95a9e99e4b7ea5d0c949da7438cc5d7017827413a200ff075852e5f07e",
+      "size_bytes": 593,
+      "url": "https://www.lidl.de/static/sitemap.xml"
+    },
+    "data/research/raw/nominatim/nominatim.openstreetmap.org_search.json": {
+      "action": "renamed",
+      "current_path": "data/research/raw/nominatim/nominatim.openstreetmap.org_search-1e25059a72eb.json",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "1e25059a72ebc512eca0082a9f6fb6eab1306e819864c38bdd7ad92c6f8b2320",
+      "size_bytes": 514,
+      "url": "https://nominatim.openstreetmap.org/search?postalcode=18119&country=Germany&format=json&limit=1"
+    },
+    "data/research/raw/open_food_facts/world.openfoodfacts.org_api_v2_product_3017620422003.json": {
+      "action": "renamed",
+      "current_path": "data/research/raw/open_food_facts/world.openfoodfacts.org_api_v2_product_3017620422003-5ff73c48455c.json",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "5ff73c48455c83ccdf09a07349f281768d796238182f2352e13ebf192f570059",
+      "size_bytes": 439,
+      "url": "https://world.openfoodfacts.org/api/v2/product/3017620422003?fields=code,product_name,brands,quantity,categories_tags,last_modified_t"
+    },
+    "data/research/raw/open_prices/openfoodfacts.github.io_open-prices.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/open_prices/openfoodfacts.github.io_open-prices-89fd2f47ac9e.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "89fd2f47ac9ecf04076fc9fedd8a24b287782d951f6e221ec07bdc734ecf0a4b",
+      "size_bytes": 25975,
+      "url": "https://openfoodfacts.github.io/open-prices/"
+    },
+    "data/research/raw/open_prices/prices.openfoodfacts.org_api_v1_price-list.html": {
+      "action": "renamed",
+      "current_path": "data/research/raw/open_prices/prices.openfoodfacts.org_api_v1_price-list-5547992afdad.html",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "5547992afdadb59737c5c0feb1a35dff294cd27145bf290c031737ecf8a2577d",
+      "size_bytes": 179,
+      "url": "https://prices.openfoodfacts.org/api/v1/price-list?limit=2"
+    },
+    "data/research/raw/open_prices/prices.openfoodfacts.org_api_v1_prices.json": {
+      "action": "renamed",
+      "current_path": "data/research/raw/open_prices/prices.openfoodfacts.org_api_v1_prices-86a2839b999b.json",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "86a2839b999b065e218a5c6a889e5feff73808776d9b6fdbe6e7a573e718889e",
+      "size_bytes": 25976,
+      "url": "https://prices.openfoodfacts.org/api/v1/prices?limit=2"
+    },
+    "data/research/raw/osm_overpass/overpass-api.de_api_interpreter.json": {
+      "action": "renamed",
+      "current_path": "data/research/raw/osm_overpass/overpass-api.de_api_interpreter-d7a7a72ca5ad.json",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "d7a7a72ca5ad03000d75642ec9f5653c227ba86e3044d62b8e46a8cfecff6684",
+      "size_bytes": 483,
+      "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%5Btimeout%3A25%5D%3Barea%5B%22name%22%3D%22Rostock%22%5D%5B%22boundary%22%3D%22administrative%22%5D-%3E.a%3Bnwr%5B%22shop%22%3D%22supermarket%22%5D%28area.a%29%3Bout%20count%3B"
+    },
+    "data/research/raw/osm_overpass/overpass-api.de_api_interpreter.xml": {
+      "action": "renamed",
+      "current_path": "data/research/raw/osm_overpass/overpass-api.de_api_interpreter-9e8d149c02b9.xml",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "9e8d149c02b9ab7719f9e6cfdf696730c39abead6f27e39eb13793b7d2adbb82",
+      "size_bytes": 695,
+      "url": "https://overpass-api.de/api/interpreter?data=[out:json][timeout:25];area[\"name\"=\"Rostock\"][\"boundary\"=\"administrative\"]->.a;nwr[\"shop\"=\"supermarket\"](area.a);out count;"
+    },
+    "data/research/raw/plz_geocoord/api.github.com_repos_WZBSocialScienceCenter_plz_geocoord_contents.json": {
+      "action": "renamed",
+      "current_path": "data/research/raw/plz_geocoord/api.github.com_repos_WZBSocialScienceCenter_plz_geocoord_contents-393b4c5137fc.json",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "393b4c5137fc29b99fccb0863f11cf601e46ea5649fee0a36d91fb39ddcc4443",
+      "size_bytes": 3556,
+      "url": "https://api.github.com/repos/WZBSocialScienceCenter/plz_geocoord/contents/"
+    },
+    "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_main_plz_geocoord.csv.txt": {
+      "action": "renamed",
+      "current_path": "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_main_plz_geocoord.csv-d5558cd419c8.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+      "size_bytes": 14,
+      "url": "https://raw.githubusercontent.com/WZBSocialScienceCenter/plz_geocoord/main/plz_geocoord.csv"
+    },
+    "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_master_LICENSE.txt": {
+      "action": "renamed",
+      "current_path": "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_master_LICENSE-a6cba85bc92e.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+      "size_bytes": 10173,
+      "url": "https://raw.githubusercontent.com/WZBSocialScienceCenter/plz_geocoord/master/LICENSE"
+    },
+    "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_master_plz_geocoord.csv.txt": {
+      "action": "renamed",
+      "current_path": "data/research/raw/plz_geocoord/raw.githubusercontent.com_WZBSocialScienceCenter_plz_geocoord_master_plz_geocoord.csv-d427a6687a7c.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "d427a6687a7cb286b3a9b4091831a06aaf0a0da40bd7c76cab7a82ac96e0d9a2",
+      "size_bytes": 245585,
+      "url": "https://raw.githubusercontent.com/WZBSocialScienceCenter/plz_geocoord/master/plz_geocoord.csv"
+    },
+    "data/research/raw/smard/smard.api.bund.dev_openapi.yaml.txt": {
+      "action": "renamed",
+      "current_path": "data/research/raw/smard/smard.api.bund.dev_openapi.yaml-f052476c2b6e.txt",
+      "migrated_utc": "2026-10-01T09:39:29Z",
+      "reason": "legacy URL-only filename; renamed to the content-addressed scheme already used for evidence fetched after the fix. Bytes unchanged, request log untouched.",
+      "sha256_decoded": "f052476c2b6e269e2d6774838b6190b23df05230259669f9cf01d34a4d01a03e",
+      "size_bytes": 9586,
+      "url": "https://smard.api.bund.dev/openapi.yaml"
+    }
+  },
+  "generated_utc": "2026-10-01T09:39:30Z",
+  "note": "One-time evidence-name migration: legacy URL-only files renamed to the content-addressed scheme, and byte-identical duplicates retired with appended tombstones. Generated by research/migrate_evidence.py; existing request-log lines were not modified.",
+  "purpose": "Derived index from request-log evidence_path to the file on disk. Regenerable with `python -m research.migrate_evidence`; never the source of truth."
+}

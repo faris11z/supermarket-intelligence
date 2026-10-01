@@ -1,0 +1,479 @@
+{
+  "source": "aldi_nord",
+  "robots": {
+    "robots_url": "https://www.aldi-nord.de/robots.txt",
+    "status_code": 200,
+    "sha256": "78ba4856c6b40b9bb485c6c57414adb6ad89b3383c77beacc391bb509362d71a",
+    "reachable": true,
+    "disallow_paths": [
+      "/reg-cat.html",
+      "/reg-bal.html",
+      "/reg-can.html",
+      "/ua-bot.html",
+      "/can/",
+      "/can.html",
+      "/can$",
+      "/bal/",
+      "/bal.html",
+      "/bal$",
+      "/mds/",
+      "/*?*filters",
+      "/*?*jobId="
+    ],
+    "declared_sitemaps": [
+      "https://www.aldi-nord.de/.aldi-nord-sitemap.xml"
+    ],
+    "policy": "hard gate, fails closed",
+    "exempt_reason": "",
+    "skipped_urls": []
+  },
+  "sitemap_index": {
+    "url": "https://www.aldi-nord.de/.aldi-nord-sitemap.xml",
+    "status_code": 200,
+    "content_type": "application/xml",
+    "sha256": "7116d3e1abf438169279f78986b1e014f1e1b65685914fb9d1953c5c442d6033",
+    "loc_count": 4,
+    "is_index": true,
+    "child_sitemaps": [
+      "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-pages.xml",
+      "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-products.xml",
+      "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-stores.xml",
+      "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-faq.xml"
+    ],
+    "sample_locs": [],
+    "notes": ""
+  },
+  "sitemap_child_count": 4,
+  "sitemap_children": {
+    "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-pages.xml": {
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-pages.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "6768524689f5a69d5b5e6db96db88e0e56141470639a9b3f5608920ea85bd628",
+      "loc_count": 649,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.aldi-nord.de",
+        "https://www.aldi-nord.de/newsletter-anmeldung.html",
+        "https://www.aldi-nord.de/unternehmen.html",
+        "https://www.aldi-nord.de/unternehmen/presse.html",
+        "https://www.aldi-nord.de/unternehmen/presse/aldi-antwort.html"
+      ],
+      "notes": ""
+    },
+    "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-products.xml": {
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-products.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "7fd212c79765463d4f47695b8936a95f40e97d98b7b17935337d95c158874738",
+      "loc_count": 2258,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.aldi-nord.de/produkt/muesli-9990.html",
+        "https://www.aldi-nord.de/produkt/pekannuss-tasche-9948.html",
+        "https://www.aldi-nord.de/produkt/irish-whiskey-993.html",
+        "https://www.aldi-nord.de/produkt/rose-cotes-de-provence-aop-9917.html",
+        "https://www.aldi-nord.de/produkt/olivenvariation-9914.html"
+      ],
+      "notes": ""
+    },
+    "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-stores.xml": {
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-stores.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "0420f09d30c4ef1dfd6d1c76080c096458184935d912c1a881150a26f699a00c",
+      "loc_count": 2236,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/uetersen/reuterstrasse-115/3180455.html",
+        "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/iserlohn/an-pater-und-nonne-3a/3180456.html",
+        "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/hoyerswerda/teschenstrasse-1/3180457.html",
+        "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/philippsthal-(werra)/ulsterstrasse-6/3180458.html",
+        "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/lengerich/luetemannskamp-4/3180459.html"
+      ],
+      "notes": ""
+    },
+    "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-faq.xml": {
+      "url": "https://www.aldi-nord.de/sitemaps/.aldi-nord-sitemap-faq.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "502f7d3dec756ee7257c2da32915c88196822e6aca087813aff1a8411bca23b9",
+      "loc_count": 7,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.aldi-nord.de/hilfe-kontakt/website.html",
+        "https://www.aldi-nord.de/hilfe-kontakt/app.html",
+        "https://www.aldi-nord.de/hilfe-kontakt/unternehmen.html",
+        "https://www.aldi-nord.de/hilfe-kontakt/produkte.html",
+        "https://www.aldi-nord.de/hilfe-kontakt/online-services.html"
+      ],
+      "notes": ""
+    }
+  },
+  "sitemap_totals_by_kind": {
+    "pages": 649,
+    "products": 2258,
+    "stores": 2236,
+    "faq": 7
+  },
+  "store_count_comparison": {
+    "exact_loc_count": 2236,
+    "estimated_previous_count": 1693,
+    "difference": 543,
+    "method": "exact count of <loc> elements in the advertised store sitemap",
+    "supersedes": "earlier estimate inferred from store-ID ranges, which was never a measurement"
+  },
+  "products": {
+    "pages_checked": 5,
+    "pages_extracted_ok": 4,
+    "pages_failed_extraction": 1,
+    "prices_found": 4,
+    "gtin_found": 0,
+    "next_data_found": 5,
+    "jsonld_blocks": 0,
+    "gtin_conclusion": "no GTIN/EAN on any of the 4 pages that parsed successfully (re-confirmed). Pages that failed to parse are excluded from this count.",
+    "counting_caveat": "prices_found and gtin_found are denominated over pages_extracted_ok, not pages_checked. A page that fails to extract is a harness failure, not evidence about the source.",
+    "pages": [
+      {
+        "url": "https://www.aldi-nord.de/produkt/frische-milch-9545",
+        "jsonld_blocks": 0,
+        "has_next_data": true,
+        "api_data_extracted": false,
+        "extraction_status": "ok",
+        "api_data_keys": [
+          "PAGE_MGNL_GET",
+          "PRODUCT_DETAIL_GET"
+        ],
+        "current_price_shape": "dict",
+        "base_price_shape": "list",
+        "base_price_container": "currentPrice",
+        "has_base_price_key": true,
+        "has_base_price_value": true,
+        "rejected_digit_runs": [
+          "1790805600",
+          "1791064799",
+          "1790805600",
+          "1791064799"
+        ],
+        "rejected_digit_runs_note": "digit runs that failed GTIN length or check-digit validation; these are promotion timestamps and similar, NOT barcodes",
+        "has_promotion": true,
+        "object_id": "9545",
+        "status_code": 200,
+        "sha256": "2ce0d407beaffd60830d27149766338aecec586c35e3de503d5197949cb6ca18"
+      },
+      {
+        "url": "https://www.aldi-nord.de/produkt/haehnchenbrustfilet-teilstuecke-8998",
+        "jsonld_blocks": 0,
+        "has_next_data": true,
+        "api_data_extracted": false,
+        "extraction_status": "ok",
+        "api_data_keys": [
+          "PAGE_MGNL_GET",
+          "PRODUCT_DETAIL_GET"
+        ],
+        "current_price_shape": "dict",
+        "base_price_shape": "list",
+        "base_price_container": "currentPrice",
+        "has_base_price_key": true,
+        "has_base_price_value": true,
+        "rejected_digit_runs": [
+          "1782597600",
+          "1893452399"
+        ],
+        "rejected_digit_runs_note": "digit runs that failed GTIN length or check-digit validation; these are promotion timestamps and similar, NOT barcodes",
+        "has_promotion": false,
+        "object_id": "8998",
+        "status_code": 200,
+        "sha256": "b498868dc9cdcdbd65fe2151380ae04c1c70170f5db8b1f45905e883d06d7265"
+      },
+      {
+        "url": "https://www.aldi-nord.de/produkt/weizenmehl-510",
+        "jsonld_blocks": 0,
+        "has_next_data": true,
+        "api_data_extracted": false,
+        "extraction_status": "ok",
+        "api_data_keys": [
+          "PAGE_MGNL_GET",
+          "PRODUCT_DETAIL_GET"
+        ],
+        "current_price_shape": "dict",
+        "base_price_shape": null,
+        "base_price_container": null,
+        "has_base_price_key": false,
+        "has_base_price_value": false,
+        "rejected_digit_runs": [
+          "1767826800",
+          "1893452399"
+        ],
+        "rejected_digit_runs_note": "digit runs that failed GTIN length or check-digit validation; these are promotion timestamps and similar, NOT barcodes",
+        "has_promotion": false,
+        "object_id": "510",
+        "status_code": 200,
+        "sha256": "1d204bb96b3e966e897d92d9f373666d1865970b59a6c70a9e04546dc9db4122"
+      },
+      {
+        "url": "https://www.aldi-nord.de/produkt/bananen-6151",
+        "jsonld_blocks": 0,
+        "has_next_data": true,
+        "api_data_extracted": false,
+        "extraction_status": "ok",
+        "api_data_keys": [
+          "PAGE_MGNL_GET",
+          "PRODUCT_DETAIL_GET"
+        ],
+        "current_price_shape": "dict",
+        "base_price_shape": "list",
+        "base_price_container": "currentPrice",
+        "has_base_price_key": true,
+        "has_base_price_value": true,
+        "rejected_digit_runs": [
+          "1791151200",
+          "1791669599",
+          "1791151200",
+          "1791669599"
+        ],
+        "rejected_digit_runs_note": "digit runs that failed GTIN length or check-digit validation; these are promotion timestamps and similar, NOT barcodes",
+        "has_promotion": true,
+        "object_id": "6151",
+        "status_code": 200,
+        "sha256": "ac3df2e12eacde2ed601fe20a292c70fb67f81644615d578b12b9735d42d7cff"
+      },
+      {
+        "url": "https://www.aldi-nord.de/produkt/langkorn-reis-5474",
+        "jsonld_blocks": 0,
+        "has_next_data": true,
+        "api_data_extracted": false,
+        "extraction_status": "failed: page has __NEXT_DATA__ but apiData is null. The server rendered a near-empty shell, so the product was not delivered in HTML. This is NOT evidence that the product lacks a price.",
+        "api_data_keys": [],
+        "api_data_shape": "NoneType",
+        "status_code": 200,
+        "sha256": "f93ad85c41b0fab1cce9d88b820f5e894380bd6d16420b9202217ba5cddeaf55"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "source": "aldi_nord",
+      "product_id": "9545",
+      "gtin": [],
+      "name": "Frische Milch",
+      "brand": "BÄRENMARKE",
+      "quantity": 1.0,
+      "unit": "L",
+      "category": "Angebote",
+      "price_eur": 0.99,
+      "strike_price_eur": 1.59,
+      "promo_label": "UVP",
+      "unit_price_eur": 0.99,
+      "unit_price_basis": "Liter",
+      "availability": "available",
+      "structured_data_type": null,
+      "source_url": "https://www.aldi-nord.de/produkt/frische-milch-9545",
+      "evidence_sha256": "2ce0d407beaffd60830d27149766338aecec586c35e3de503d5197949cb6ca18",
+      "notes": "Aldi publishes a per-Liter price (0.99 EUR) alongside the shelf price, so unit-price comparison against another retailer is possible for this product."
+    },
+    {
+      "source": "aldi_nord",
+      "product_id": "8998",
+      "gtin": [],
+      "name": "Hähnchenbrustfilet-Teilstücke",
+      "brand": "MEINE METZGEREI",
+      "quantity": 600.0,
+      "unit": "g",
+      "category": "gefluegel/meine-metzgerei/protein/airfryer",
+      "price_eur": 6.79,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": 11.32,
+      "unit_price_basis": "kg",
+      "availability": "available",
+      "structured_data_type": null,
+      "source_url": "https://www.aldi-nord.de/produkt/haehnchenbrustfilet-teilstuecke-8998",
+      "evidence_sha256": "b498868dc9cdcdbd65fe2151380ae04c1c70170f5db8b1f45905e883d06d7265",
+      "notes": "Aldi publishes a per-kg price (11.32 EUR) alongside the shelf price, so unit-price comparison against another retailer is possible for this product."
+    },
+    {
+      "source": "aldi_nord",
+      "product_id": "510",
+      "gtin": [],
+      "name": "Weizenmehl",
+      "brand": "BACK FAMILY",
+      "quantity": 1.0,
+      "unit": "kg",
+      "category": "mehl-zucker/back-family",
+      "price_eur": 0.59,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "available",
+      "structured_data_type": null,
+      "source_url": "https://www.aldi-nord.de/produkt/weizenmehl-510",
+      "evidence_sha256": "1d204bb96b3e966e897d92d9f373666d1865970b59a6c70a9e04546dc9db4122",
+      "notes": "No basePrice field on this page. Aldi omits it when the pack size already equals the base unit, so a 1 kg or 1 L pack has no separate per-unit price to publish: the shelf price is the unit price."
+    },
+    {
+      "source": "aldi_nord",
+      "product_id": "6151",
+      "gtin": [],
+      "name": "Bananen",
+      "brand": null,
+      "quantity": null,
+      "unit": "kg",
+      "category": "Angebote/frisches-obst-gemuese",
+      "price_eur": 0.99,
+      "strike_price_eur": 1.29,
+      "promo_label": null,
+      "unit_price_eur": 0.99,
+      "unit_price_basis": "kg",
+      "availability": "available",
+      "structured_data_type": null,
+      "source_url": "https://www.aldi-nord.de/produkt/bananen-6151",
+      "evidence_sha256": "ac3df2e12eacde2ed601fe20a292c70fb67f81644615d578b12b9735d42d7cff",
+      "notes": "Aldi publishes a per-kg price (0.99 EUR) alongside the shelf price, so unit-price comparison against another retailer is possible for this product."
+    },
+    {
+      "source": "aldi_nord",
+      "product_id": null,
+      "gtin": [],
+      "name": null,
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": null,
+      "structured_data_type": null,
+      "source_url": "https://www.aldi-nord.de/produkt/langkorn-reis-5474",
+      "evidence_sha256": "f93ad85c41b0fab1cce9d88b820f5e894380bd6d16420b9202217ba5cddeaf55",
+      "notes": "Extraction failure, not a data finding. The URL redirected (308) to a .html variant that renders without the product payload. Whether this means the product is discontinued, renamed, or requires a store selection cannot be determined from the permitted page."
+    }
+  ],
+  "store_page": {
+    "url": "https://www.aldi-nord.de/filialen-und-oeffnungszeiten/rostock/lortzingstrasse-19a/3180621.html",
+    "status_code": 200,
+    "result": "success",
+    "has_next_data": true,
+    "api_data_keys": [
+      "STORE_DETAIL_UBERALL_GET"
+    ],
+    "extraction_status": "ok",
+    "id": 3180621,
+    "business_id": 1312729,
+    "lat": 54.16939,
+    "lng": 12.083483,
+    "postal_code": "18119",
+    "city": "Rostock",
+    "street": "Lortzingstraße 19a",
+    "province": "Mecklenburg-Vorpommern",
+    "google_place_id": "ChIJffEWgSJWrEcRCEkomF2INqg",
+    "store_identifier": "DE029055",
+    "opening_hours_count": 7,
+    "opening_hours": [
+      {
+        "dayOfWeek": 1,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 2,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 3,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 4,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 5,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 6,
+        "from1": "07:00",
+        "to1": "20:00"
+      },
+      {
+        "dayOfWeek": 7,
+        "from1": "12:00",
+        "to1": "18:00"
+      }
+    ],
+    "special_opening_hours_count": 6,
+    "special_opening_hours": [
+      {
+        "date": "2026-10-03",
+        "closed": true
+      },
+      {
+        "date": "2026-10-31",
+        "closed": true
+      },
+      {
+        "date": "2026-12-25",
+        "closed": true
+      },
+      {
+        "date": "2026-12-26",
+        "closed": true
+      },
+      {
+        "date": "2027-01-01",
+        "closed": true
+      },
+      {
+        "date": "2027-03-08",
+        "closed": true
+      }
+    ],
+    "services": [
+      "Backstation",
+      "Parkplatz",
+      "Einkaufswagen",
+      "Kindereinkaufswagen",
+      "Einkaufswagen mit Babyschale",
+      "Barrierefrei zugänglich",
+      "Packstation"
+    ],
+    "payment_options": [
+      "V-Pay",
+      "AMEX",
+      "MAESTRO",
+      "GOOGLEPAY",
+      "DISCOVER",
+      "MASTERCARD",
+      "VISA",
+      "APPLEPAY",
+      "CASH",
+      "ALDI Geschenkkarte",
+      "DINERSCLUB",
+      "EC"
+    ],
+    "operating_region_note": "Regionalgesellschaft: ALDI GmbH & Co. Kommanditgesellschaft, Anklamer Str. 9, 17126 Jarmen",
+    "jsonld_blocks": 18,
+    "sha256": "b30a0a4d3bd5e11a14befceb3eeaad21ba6cef7369fc45f8f0214b2a35f2832c",
+    "coordinates_note": "lat/lng are published on the permitted page. This resolves store location for Aldi Nord without any external postcode gazetteer."
+  },
+  "licensing": {
+    "legal_document_discovered": false,
+    "legal_reuse_permission_identified": false,
+    "method": "Phase 2 searched the 649-URL pages sitemap. No general Terms of Use and no Impressum is published. The 5 privacy pages and 7 promotion-terms pages exist but their text is CMS-fetched client-side, so no clause was read.",
+    "requests_made_this_phase": 0,
+    "note": "No legal URL guessing was repeated in Phase 3, per instruction. robots.txt permission is not a reuse licence. This is a LEGAL QUESTION, not a technical finding, and is deliberately left unresolved."
+  }
+}

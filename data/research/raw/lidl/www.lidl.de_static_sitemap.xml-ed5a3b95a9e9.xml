@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<sitemap>
+<loc>https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz</loc>
+</sitemap>
+
+	<sitemap>
+		<loc>https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz</loc>
+	</sitemap>
+	<sitemap>
+		<loc>https://www.lidl.de/s/de-DE/filialen/sitemap.xml</loc>
+	</sitemap>
+	<sitemap xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<loc>https://www.lidl.de/cdn/assets/sitemaps/brands.xml</loc>
+	<loc>https://www.lidl.de/cdn/assets/sitemaps/nqps.xml</loc>
+</sitemap>
+
+</sitemapindex>

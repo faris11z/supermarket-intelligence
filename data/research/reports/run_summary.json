@@ -1,0 +1,22 @@
+{
+  "started_utc": "2026-10-01T09:58:08Z",
+  "sources": [
+    "aldi",
+    "lidl",
+    "alternatives"
+  ],
+  "user_agent": "supermarket-intelligence-research/0.1 (personal feasibility research; bounded requests; contact via repo)",
+  "mode": "offline-replay",
+  "aldi_record_count": 5,
+  "aldi_result": "ok",
+  "lidl_record_count": 5,
+  "lidl_result": "ok",
+  "alternatives_result": "ok",
+  "finished_utc": "2026-10-01T09:58:11Z",
+  "requests_made": 0,
+  "results_by_type": {
+    "success": 32,
+    "redirect": 5,
+    "error": 1
+  }
+}

@@ -1,0 +1,949 @@
+{
+  "source": "lidl",
+  "robots": {
+    "robots_url": "https://www.lidl.de/robots.txt",
+    "status_code": 200,
+    "sha256": "221324c16f525a4dff9554f2d3d3401f225aa00046efd9fdaa96f203bb52315a",
+    "reachable": true,
+    "disallow_paths": [
+      "/cc.js*",
+      "/cdn/assets/cwv/",
+      "/user-api/*",
+      "/cqe/*",
+      "*search?q=*",
+      "*?offset=*",
+      "*idsOnly=*",
+      "*productsOnly=*",
+      "*id=*",
+      "*pageId=*",
+      "*advisor=*",
+      "*sort=*"
+    ],
+    "declared_sitemaps": [
+      "https://www.lidl.de/static/sitemap.xml"
+    ],
+    "policy": "hard gate, fails closed",
+    "exempt_reason": "",
+    "skipped_urls": []
+  },
+  "sitemap_index": {
+    "url": "https://www.lidl.de/static/sitemap.xml",
+    "status_code": 200,
+    "content_type": "application/xml",
+    "sha256": "ed5a3b95a9e99e4b7ea5d0c949da7438cc5d7017827413a200ff075852e5f07e",
+    "loc_count": 5,
+    "is_index": true,
+    "child_sitemaps": [
+      "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+      "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz",
+      "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+      "https://www.lidl.de/cdn/assets/sitemaps/brands.xml",
+      "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml"
+    ],
+    "sample_locs": [],
+    "notes": ""
+  },
+  "sitemap_count": 5,
+  "child_sitemaps": [
+    "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+    "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz",
+    "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+    "https://www.lidl.de/cdn/assets/sitemaps/brands.xml",
+    "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml"
+  ],
+  "sitemap_children": {
+    "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz": {
+      "url": "https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz",
+      "status_code": 200,
+      "content_type": "application/gzip",
+      "sha256": "bc7feb57f2dd7bae4178e49aaacd7943960c77be93bf91273ec9447a2b7e0c5d",
+      "loc_count": 13337,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.lidl.de/p/edition-wuerttemberg-schwarzriesling-qba-lieblich-literflasche-rotwein-2023/p100000271",
+        "https://www.lidl.de/p/allini-asti-vino-spumante-millesimato-docg-mild-schaumwein-2025/p100001180",
+        "https://www.lidl.de/p/ehrentrudis-tuniberger-spaetburgunder-weissherbst-qba-lieblich-rosewein-2024/p100001259",
+        "https://www.lidl.de/p/comte-de-brismand-brut-reserve-champagner/p100001673",
+        "https://www.lidl.de/p/badenia-trendline-seitenschlaeferkissen-basic-40x145-cm/p100003299"
+      ],
+      "notes": ""
+    },
+    "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz": {
+      "url": "https://www.lidl.de/explore/assets/s/pages_de-DE_de.xml.gz",
+      "status_code": 200,
+      "content_type": "application/zip",
+      "sha256": "30d0f2c3c9dd46619e623c27676d7152e65ec09059ca979368f9a082052d71a1",
+      "loc_count": 2085,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.lidl.de/c/widerrufsrecht-onlineshop/s10005170",
+        "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181",
+        "https://www.lidl.de/c/gesetzliche-zusatzinformationen/s10005186",
+        "https://www.lidl.de/c/rechtliche-informationen/s10005200",
+        "https://www.lidl.de/c/datenschutz-digitale-assistenten/s10005201"
+      ],
+      "notes": ""
+    },
+    "https://www.lidl.de/s/de-DE/filialen/sitemap.xml": {
+      "url": "https://www.lidl.de/s/de-DE/filialen/sitemap.xml",
+      "status_code": 200,
+      "content_type": "text/xml",
+      "sha256": "cf931ce7b73eaf60831cea1a84102fc5e2046f4cfe99a64759e7c7a0b718c5c4",
+      "loc_count": 3669,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.lidl.de/s/",
+        "https://www.lidl.de/s/de-DE/filialen/",
+        "https://www.lidl.de/s/de-DE/neueroeffnungen/",
+        "https://www.lidl.de/s/de-DE/filialen/aachen/",
+        "https://www.lidl.de/s/de-DE/filialen/aalen/"
+      ],
+      "notes": ""
+    },
+    "https://www.lidl.de/cdn/assets/sitemaps/brands.xml": {
+      "url": "https://www.lidl.de/cdn/assets/sitemaps/brands.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "bcc760c051fd5eb4d05a282f7f66922d77f20065075fe9b365c457721d75c927",
+      "loc_count": 776,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.lidl.de/q/brand/aquapur/b307",
+        "https://www.lidl.de/q/brand/auriol/b6",
+        "https://www.lidl.de/q/brand/crelando/b6135",
+        "https://www.lidl.de/q/brand/crivit/b1786",
+        "https://www.lidl.de/q/brand/ernesto/b78"
+      ],
+      "notes": ""
+    },
+    "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml": {
+      "url": "https://www.lidl.de/cdn/assets/sitemaps/nqps.xml",
+      "status_code": 200,
+      "content_type": "application/xml",
+      "sha256": "f9c7173ec4906935bdcc5afa920feea0eda93a312e99b64465ba526f0ccbb003",
+      "loc_count": 69,
+      "is_index": false,
+      "child_sitemaps": [],
+      "sample_locs": [
+        "https://www.lidl.de/q/query/supersale",
+        "https://www.lidl.de/q/query/damenmode-sale",
+        "https://www.lidl.de/q/query/herrenmode-sale",
+        "https://www.lidl.de/q/query/kindermode-sale",
+        "https://www.lidl.de/q/query/babymode-sale"
+      ],
+      "notes": ""
+    }
+  },
+  "product_url_count": 13337,
+  "store_url_count": 3669,
+  "other_sitemap_counts": {
+    "pages_de-DE_de.xml.gz": 2085,
+    "brands.xml": 776,
+    "nqps.xml": 69
+  },
+  "catalog_analysis": {
+    "method": "Split each product slug on hyphens and match a German grocery vocabulary as WHOLE tokens, discard anything carrying a non-food brand or product-family word, then review every remaining slug by hand and record a verdict. The automated pass narrows the catalog to something a person can read; it does not make the final call.",
+    "why_not_prefix_matching": "An earlier version used substring matching and reported a food share near 1%. That was an artefact: '-ba' matched 'bananenpflanze' and '-ei' matched 'eiche'. Prefix matching is not a measurement.",
+    "grocery_token_hit_count": 113,
+    "after_nonfood_filter_count": 48,
+    "grocery_token_hits_reviewed": [
+      "3-x-0-5-l-flasche-spirituosenpaket-goldhauch-haselnuss-edeldestillat-40-vol",
+      "6-x-0-75-l-flasche-weinpaket-orange-sunset-vin-de-france-lieblich-weisswein",
+      "allini-premium-orange-peel-spritz",
+      "alpenschnaps-haselnuss-33-vol-0-5-l-flasche-mit-hut",
+      "alpenschnaps-haselnuss-33-vol-1-l-flasche",
+      "alpenschnaps-himbeere-35-vol-1-l-flasche",
+      "amo-sibirische-blaubeere-lonicera-kamtschatica-im-2-liter-topf-ca-40-60-cm",
+      "apfel-alkmene-spindel-langsam-und-schlank-wachsend",
+      "apfel-cox-orange-allergiker-vertraeglich-winterhart-mehrjaehrig-1-pflanze",
+      "apfel-granny-smith-compact-spindel-dunkelgruen-gute-lagerfaehigkeit-kompakter-wuchs",
+      "apfel-gravensteiner-und-birne-williams-christ-2-pflanzen-buschbaum-winterhart",
+      "apfel-gravensteiner-und-jonagold-2-pflanzen-buschbaum-300-400-cm-wuchshoehe",
+      "apfel-pinova-1-buschbaum-im-5-liter-topf-ca-100-cm",
+      "apfel-rhapsodie-saeulenobst-60-cm-schmale-wuchsbreite-schorftolerant-und-winterhart",
+      "apfel-sonate-saeulenobst-60-cm-schmale-wuchsbreite-winterhart-schorftolerant",
+      "axi-sand-wasser-picknicktisch-nick",
+      "baileys-schokolade-haselnuss-limited-edition-17-vol",
+      "bauer-kuss-der-haselnuss-33-vol",
+      "beerenobst-4-pflanzen-johannisbeere-stachelbeere-himbeere-brombeere-winterhart",
+      "belbake-bio-dinkel-mehl-vollkorn-bioland",
+      "belbake-dinkelmehl-vollkorn",
+      "berentzen-apfel-18-vol",
+      "berentzen-saurer-apfel-16-vol",
+      "better-garden-ei-sessel-mit-rattan-inkl-kissen-braun-weiss",
+      "birne-gute-luise-buschbaum",
+      "birne-williams-christ-und-koestliche-von-charneux-2-pflanzen-buschbaum-suess-saftig",
+      "bodum-twin-salz-und-pfeffermuehle",
+      "captain-morgan-tiki-mango-and-pineapple-rum-basis-25-vol",
+      "castelgy-orange-gin-37-5-vol",
+      "christopeit-holz-wasser-rudergeraet-wp-5000",
+      "christopeit-sport-wasser-rudergeraet-wp-2000-mit-kinomap",
+      "clementoni-malset-tropical-green-world-monster-orange-mood-fantasy-purple-power-crazy-summer-sweet-pets-trendy-animals",
+      "crivit-luftmatratze-ananas-wassermelonen-stieleis-erdbeere-eiswaffel-avocado-inkl-2-reparaturflicken",
+      "crivit-wasser-rudergeraet-connected",
+      "crownfield-bio-knusper-muesli-beeren",
+      "crownfield-knusper-weniger-suess-hafer-muesli",
+      "deluxe-premium-sahnelikoer-schokolade-17-vol",
+      "deluxe-premium-vodka-aus-birne-42-vol",
+      "don-papa-masskara-spirit-drink-40-vol",
+      "dundalgan-cream-liqueur-schoko-haselnuss-geschmack-17-vol",
+      "echtwerk-salz-pfeffermuehlen-set-2tlg",
+      "einlegeboden-2er-set-fuer-drehtuerenschraenke-der-marke-rauch-orange",
+      "einlegeboden-2er-set-fuer-schiebetuerenschraenke-der-marke-rauch-orange",
+      "ernesto-edelstahl-salz-und-pfeffermuehle-chilimuehle",
+      "fillikid-wasserspielmatte-schildkroete-mit-wasser-befuellbar",
+      "genius-nicer-dicer-zerkleinerer-quick-5-tlg-orange",
+      "goji-beere-winterhart-mehrjaehrig-1-pflanze-3-m-wuchshoehe-2-liter-container",
+      "goldhauch-haselnuss-edeldestillat-40-vol",
+      "grafschafter-brunchmix-broetchen",
+      "grillmeister-grillkorb-zylinderkorb-set-fisch-grillguthalter-hamburger-grillguthalter",
+      "guede-kompressor-airpower-375-8-100-ed-silent-oel-wartungsfrei",
+      "henkel-mango-maracuja-schaeumend",
+      "himbeere-fallgold-1-pflanze-im-2-liter-topf",
+      "himbeere-glen-ample-3-pflanzen-im-2-liter-topf",
+      "himbeere-golden-queen-2-liter-topf",
+      "irish-mist-honig-whiskey-liqueur-35-vol",
+      "jaegermeister-orange-mit-geschenkbox-und-longdrinkglas-33-vol",
+      "joseph-joseph-duo-kruemelfreies-salz-und-pfeffermuehlen-set",
+      "kleiderstange-fuer-kleiderschraenke-der-marke-rauch-orange",
+      "lego-technic-42200-monster-jam-thunderroarus-pull-back",
+      "lupilu-clippysaurier-im-ei-250-teilig",
+      "lupilu-sandwich-set-obst-set-fleisch-und-fisch-set-gemuese-set",
+      "lupilu-sandwich-set-obst-set-fleisch-und-fisch-set-gemuese-set",
+      "maeser-salat-set-iberico-blue-5-teilig-4-designs",
+      "nashi-birne-saeule-3-jaehrig-1-pflanze-5-liter-container-4-m-wuchshoehe",
+      "o-donnel-moonshine-harte-nuss-likoer-25-vol",
+      "orange-sunset-vin-de-france-lieblich-weisswein-2024",
+      "puma-damen-t-shirt-ess-logo-tee-aus-reiner-baumwolle",
+      "puma-herren-t-shirt-ess-logo-tee-aus-reiner-baumwolle",
+      "queen-margot-sahne-likoer-mit-whisky-17-vol",
+      "rauch-orange-acero-drehtuerenschrank",
+      "rauch-orange-acero-gardeobenschrank",
+      "rauch-orange-aditio-beds-bett-mit-unterbau",
+      "rauch-orange-albero-querklappbett",
+      "rauch-orange-allrounder-grundelement-waescheschrank-1trg",
+      "rauch-orange-drehtuerenschrank-alabama",
+      "rauch-orange-drehtuerenschrank-alabama-mit-spiegel",
+      "rauch-orange-drehtuerenschrank-montclar",
+      "rauch-orange-kommode-alabama-klares-modernes-design",
+      "rauch-orange-kulmbach-schwebetuerenschrank-3-trg-alpinweiss",
+      "rauch-orange-kulmbach-schwebetuerenschrank-3-trg-alpinweiss-mit-spiegel",
+      "rauch-orange-mare-bett",
+      "rauch-orange-quadra-schwebetuerenschrank-mit-glaselementen",
+      "rauch-orange-quadra-schwebetuerenschrank-mit-spiegelelementen",
+      "rauch-orange-querklappbett-albero-mit-regalelement-und-schrank",
+      "rauch-orange-scala-futonbett",
+      "rauch-orange-schwebetuerenschrank-malva-extra",
+      "ron-millonario-kuytchi-spirit-drink-40-vol",
+      "russell-hobbs-salz-und-pfeffermuehlen",
+      "salz-pfeffermuehle",
+      "sibirische-blaubeere-eisbaer",
+      "silvercrest-2-in-1-oel-spender",
+      "silvercrest-brot-frischhaltedose",
+      "silvercrest-elektrische-salz-oder-pfeffermuehle",
+      "silvercrest-elektrische-salz-oder-pfeffermuehle-sme-6-a1",
+      "silvercrest-elektrische-salz-oder-pfeffermuehle-sspm-6-b1",
+      "silvercrest-elektrische-salz-und-pfeffermuehlen-set",
+      "silvercrest-kaffee-teedose",
+      "silvercrest-pasta-maschine-spm-220-a3",
+      "silvercrest-popcorn-maker",
+      "silvercrest-popcorn-maker",
+      "silvercrest-premium-essig-und-oelsprueher-set",
+      "silvercrest-salz-und-pfeffermuehle",
+      "silvercrest-salz-und-pfeffermuehlen-set",
+      "silvercrest-salz-und-pfeffermuehlen-set-essig-und-oelspender-set-reibe",
+      "silvercrest-smoothie-maker",
+      "silvercrest-smoothie-maker-eds-ssme-300-b1",
+      "silvercrest-smoothie-maker-to-go-ssma-67-c3",
+      "starterset-obstbaeume-bestehend-aus-je-1-buschbaum-apfel-cox-orange-birne-fruehe-von-trevoux-kirsche-schneiders-spaete",
+      "tayberry-beerenobst-kreuzung-aus-himbeere-und-brombeere-sehr-grosse-fruechte-winterhart",
+      "topmove-einkaufstrolley-40-l-mit-teleskopgriff-und-innentasche-mit-einkaufswagen-chips",
+      "weissweinschorle-lieblich-mit-60-weissweinanteil-und-natuerlichem-mineralwasser-literflasche",
+      "zwergapfelbaum-cox-orange-1-8-2-meter-wuchshoehe-mittelgrosse-fruechte-suess-aromatisch"
+    ],
+    "verdict_counts": {
+      "grocery": 5,
+      "alcohol": 24,
+      "plant": 12,
+      "nonfood": 7
+    },
+    "grocery_survivors": [
+      "belbake-bio-dinkel-mehl-vollkorn-bioland",
+      "belbake-dinkelmehl-vollkorn",
+      "crownfield-bio-knusper-muesli-beeren",
+      "crownfield-knusper-weniger-suess-hafer-muesli",
+      "grafschafter-brunchmix-broetchen"
+    ],
+    "curated_slugs_absent_from_survivors": [],
+    "verdicts": [
+      {
+        "slug": "3-x-0-5-l-flasche-spirituosenpaket-goldhauch-haselnuss-edeldestillat-40-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/3-x-0-5-l-flasche-spirituosenpaket-goldhauch-haselnuss-edeldestillat-40-vol/p800013454"
+      },
+      {
+        "slug": "6-x-0-75-l-flasche-weinpaket-orange-sunset-vin-de-france-lieblich-weisswein",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/6-x-0-75-l-flasche-weinpaket-orange-sunset-vin-de-france-lieblich-weisswein/p800014644"
+      },
+      {
+        "slug": "allini-premium-orange-peel-spritz",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/allini-premium-orange-peel-spritz/p100368940"
+      },
+      {
+        "slug": "alpenschnaps-haselnuss-33-vol-0-5-l-flasche-mit-hut",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/alpenschnaps-haselnuss-33-vol-0-5-l-flasche-mit-hut/p100410030"
+      },
+      {
+        "slug": "alpenschnaps-haselnuss-33-vol-1-l-flasche",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/alpenschnaps-haselnuss-33-vol-1-l-flasche/p100371472"
+      },
+      {
+        "slug": "alpenschnaps-himbeere-35-vol-1-l-flasche",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/alpenschnaps-himbeere-35-vol-1-l-flasche/p100362877"
+      },
+      {
+        "slug": "apfel-alkmene-spindel-langsam-und-schlank-wachsend",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-alkmene-spindel-langsam-und-schlank-wachsend/p100178172"
+      },
+      {
+        "slug": "apfel-granny-smith-compact-spindel-dunkelgruen-gute-lagerfaehigkeit-kompakter-wuchs",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-granny-smith-compact-spindel-dunkelgruen-gute-lagerfaehigkeit-kompakter-wuchs/p100157209"
+      },
+      {
+        "slug": "apfel-gravensteiner-und-birne-williams-christ-2-pflanzen-buschbaum-winterhart",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-gravensteiner-und-birne-williams-christ-2-pflanzen-buschbaum-winterhart/p100182561"
+      },
+      {
+        "slug": "apfel-gravensteiner-und-jonagold-2-pflanzen-buschbaum-300-400-cm-wuchshoehe",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-gravensteiner-und-jonagold-2-pflanzen-buschbaum-300-400-cm-wuchshoehe/p100182560"
+      },
+      {
+        "slug": "apfel-rhapsodie-saeulenobst-60-cm-schmale-wuchsbreite-schorftolerant-und-winterhart",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-rhapsodie-saeulenobst-60-cm-schmale-wuchsbreite-schorftolerant-und-winterhart/p100180414"
+      },
+      {
+        "slug": "apfel-sonate-saeulenobst-60-cm-schmale-wuchsbreite-winterhart-schorftolerant",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/apfel-sonate-saeulenobst-60-cm-schmale-wuchsbreite-winterhart-schorftolerant/p100180415"
+      },
+      {
+        "slug": "axi-sand-wasser-picknicktisch-nick",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/axi-sand-wasser-picknicktisch-nick/p100408229"
+      },
+      {
+        "slug": "baileys-schokolade-haselnuss-limited-edition-17-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/baileys-schokolade-haselnuss-limited-edition-17-vol/p100400711"
+      },
+      {
+        "slug": "bauer-kuss-der-haselnuss-33-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/bauer-kuss-der-haselnuss-33-vol/p100216500"
+      },
+      {
+        "slug": "beerenobst-4-pflanzen-johannisbeere-stachelbeere-himbeere-brombeere-winterhart",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/beerenobst-4-pflanzen-johannisbeere-stachelbeere-himbeere-brombeere-winterhart/p100160347"
+      },
+      {
+        "slug": "belbake-bio-dinkel-mehl-vollkorn-bioland",
+        "in_sitemap": true,
+        "verdict": "grocery",
+        "reason": "edible food product, kept",
+        "url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984"
+      },
+      {
+        "slug": "belbake-dinkelmehl-vollkorn",
+        "in_sitemap": true,
+        "verdict": "grocery",
+        "reason": "edible food product, kept",
+        "url": "https://www.lidl.de/p/belbake-dinkelmehl-vollkorn/p10079985"
+      },
+      {
+        "slug": "berentzen-apfel-18-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/berentzen-apfel-18-vol/p100366374"
+      },
+      {
+        "slug": "berentzen-saurer-apfel-16-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/berentzen-saurer-apfel-16-vol/p100366357"
+      },
+      {
+        "slug": "birne-gute-luise-buschbaum",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/birne-gute-luise-buschbaum/p100160162"
+      },
+      {
+        "slug": "birne-williams-christ-und-koestliche-von-charneux-2-pflanzen-buschbaum-suess-saftig",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/birne-williams-christ-und-koestliche-von-charneux-2-pflanzen-buschbaum-suess-saftig/p100182559"
+      },
+      {
+        "slug": "bodum-twin-salz-und-pfeffermuehle",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/bodum-twin-salz-und-pfeffermuehle/p100396444"
+      },
+      {
+        "slug": "captain-morgan-tiki-mango-and-pineapple-rum-basis-25-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/captain-morgan-tiki-mango-and-pineapple-rum-basis-25-vol/p100324208"
+      },
+      {
+        "slug": "castelgy-orange-gin-37-5-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/castelgy-orange-gin-37-5-vol/p100347124"
+      },
+      {
+        "slug": "crownfield-bio-knusper-muesli-beeren",
+        "in_sitemap": true,
+        "verdict": "grocery",
+        "reason": "edible food product, kept",
+        "url": "https://www.lidl.de/p/crownfield-bio-knusper-muesli-beeren/p10079987"
+      },
+      {
+        "slug": "crownfield-knusper-weniger-suess-hafer-muesli",
+        "in_sitemap": true,
+        "verdict": "grocery",
+        "reason": "edible food product, kept",
+        "url": "https://www.lidl.de/p/crownfield-knusper-weniger-suess-hafer-muesli/p10079986"
+      },
+      {
+        "slug": "deluxe-premium-sahnelikoer-schokolade-17-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/deluxe-premium-sahnelikoer-schokolade-17-vol/p100371089"
+      },
+      {
+        "slug": "deluxe-premium-vodka-aus-birne-42-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/deluxe-premium-vodka-aus-birne-42-vol/p100399860"
+      },
+      {
+        "slug": "don-papa-masskara-spirit-drink-40-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/don-papa-masskara-spirit-drink-40-vol/p100321556"
+      },
+      {
+        "slug": "dundalgan-cream-liqueur-schoko-haselnuss-geschmack-17-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/dundalgan-cream-liqueur-schoko-haselnuss-geschmack-17-vol/p100414529"
+      },
+      {
+        "slug": "echtwerk-salz-pfeffermuehlen-set-2tlg",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/echtwerk-salz-pfeffermuehlen-set-2tlg/p100348358"
+      },
+      {
+        "slug": "goldhauch-haselnuss-edeldestillat-40-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/goldhauch-haselnuss-edeldestillat-40-vol/p100186806"
+      },
+      {
+        "slug": "grafschafter-brunchmix-broetchen",
+        "in_sitemap": true,
+        "verdict": "grocery",
+        "reason": "edible food product, kept",
+        "url": "https://www.lidl.de/p/grafschafter-brunchmix-broetchen/p10079988"
+      },
+      {
+        "slug": "grillmeister-grillkorb-zylinderkorb-set-fisch-grillguthalter-hamburger-grillguthalter",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/grillmeister-grillkorb-zylinderkorb-set-fisch-grillguthalter-hamburger-grillguthalter/p100400194"
+      },
+      {
+        "slug": "guede-kompressor-airpower-375-8-100-ed-silent-oel-wartungsfrei",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/guede-kompressor-airpower-375-8-100-ed-silent-oel-wartungsfrei/p100394822"
+      },
+      {
+        "slug": "irish-mist-honig-whiskey-liqueur-35-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/irish-mist-honig-whiskey-liqueur-35-vol/p100216505"
+      },
+      {
+        "slug": "jaegermeister-orange-mit-geschenkbox-und-longdrinkglas-33-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/jaegermeister-orange-mit-geschenkbox-und-longdrinkglas-33-vol/p100393729"
+      },
+      {
+        "slug": "o-donnel-moonshine-harte-nuss-likoer-25-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/o-donnel-moonshine-harte-nuss-likoer-25-vol/p100260299"
+      },
+      {
+        "slug": "orange-sunset-vin-de-france-lieblich-weisswein-2024",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/orange-sunset-vin-de-france-lieblich-weisswein-2024/p100373792"
+      },
+      {
+        "slug": "queen-margot-sahne-likoer-mit-whisky-17-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/queen-margot-sahne-likoer-mit-whisky-17-vol/p100186924"
+      },
+      {
+        "slug": "ron-millonario-kuytchi-spirit-drink-40-vol",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/ron-millonario-kuytchi-spirit-drink-40-vol/p100370390"
+      },
+      {
+        "slug": "salz-pfeffermuehle",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/salz-pfeffermuehle/p100412084"
+      },
+      {
+        "slug": "sibirische-blaubeere-eisbaer",
+        "in_sitemap": true,
+        "verdict": "nonfood",
+        "reason": "kitchen gadget, tool, or furniture",
+        "url": "https://www.lidl.de/p/sibirische-blaubeere-eisbaer/p100178170"
+      },
+      {
+        "slug": "starterset-obstbaeume-bestehend-aus-je-1-buschbaum-apfel-cox-orange-birne-fruehe-von-trevoux-kirsche-schneiders-spaete",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/starterset-obstbaeume-bestehend-aus-je-1-buschbaum-apfel-cox-orange-birne-fruehe-von-trevoux-kirsche-schneiders-spaete/p100165459"
+      },
+      {
+        "slug": "tayberry-beerenobst-kreuzung-aus-himbeere-und-brombeere-sehr-grosse-fruechte-winterhart",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/tayberry-beerenobst-kreuzung-aus-himbeere-und-brombeere-sehr-grosse-fruechte-winterhart/p100174088"
+      },
+      {
+        "slug": "weissweinschorle-lieblich-mit-60-weissweinanteil-und-natuerlichem-mineralwasser-literflasche",
+        "in_sitemap": true,
+        "verdict": "alcohol",
+        "reason": "beverage, not a grocery staple",
+        "url": "https://www.lidl.de/p/weissweinschorle-lieblich-mit-60-weissweinanteil-und-natuerlichem-mineralwasser-literflasche/p100385148"
+      },
+      {
+        "slug": "zwergapfelbaum-cox-orange-1-8-2-meter-wuchshoehe-mittelgrosse-fruechte-suess-aromatisch",
+        "in_sitemap": true,
+        "verdict": "plant",
+        "reason": "fruit tree / seedling, not edible product",
+        "url": "https://www.lidl.de/p/zwergapfelbaum-cox-orange-1-8-2-meter-wuchshoehe-mittelgrosse-fruechte-suess-aromatisch/p100178168"
+      }
+    ],
+    "alcohol_dominated": "The largest single vocabulary group in the product sitemap is alcohol: 'trocken' appears 597 times and 'rotwein' 365 times, against single-digit counts for almost every genuine food word."
+  },
+  "observations": [
+    {
+      "source": "lidl",
+      "product_id": "10079984",
+      "gtin": [],
+      "name": "Belbake Bio Dinkel-Mehl Vollkorn, Bioland",
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "InStoreOnly",
+      "structured_data_type": "schema.org Product (JSON-LD)",
+      "source_url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984",
+      "evidence_sha256": "efea93ca11d9e34c040b49389fb306bf243cb52cdc3f354649e0bd7cf89e8e48",
+      "notes": "No GTIN in JSON-LD for this product."
+    },
+    {
+      "source": "lidl",
+      "product_id": "10079985",
+      "gtin": [],
+      "name": "Belbake Dinkelmehl Vollkorn",
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "InStoreOnly",
+      "structured_data_type": "schema.org Product (JSON-LD)",
+      "source_url": "https://www.lidl.de/p/belbake-dinkelmehl-vollkorn/p10079985",
+      "evidence_sha256": "246b75d9194d9d6a1ec99b4bffde200aa493f502afa7dbefaf1bbd2f7c5e274a",
+      "notes": "No GTIN in JSON-LD for this product."
+    },
+    {
+      "source": "lidl",
+      "product_id": "10079987",
+      "gtin": [],
+      "name": "Crownfield Bio Knusper Müsli Beeren",
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "InStoreOnly",
+      "structured_data_type": "schema.org Product (JSON-LD)",
+      "source_url": "https://www.lidl.de/p/crownfield-bio-knusper-muesli-beeren/p10079987",
+      "evidence_sha256": "1ee6d5ad027bae375f7c4eae618636b2a190f72a84fa5f00ddc77a78fba3a532",
+      "notes": "No GTIN in JSON-LD for this product."
+    },
+    {
+      "source": "lidl",
+      "product_id": "10079986",
+      "gtin": [],
+      "name": "Crownfield Knusper weniger süß, Hafer-Müsli",
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "InStoreOnly",
+      "structured_data_type": "schema.org Product (JSON-LD)",
+      "source_url": "https://www.lidl.de/p/crownfield-knusper-weniger-suess-hafer-muesli/p10079986",
+      "evidence_sha256": "f37d657d8c7ed534ed70976b447c47597424a083eaa1da76991af042bff74018",
+      "notes": "No GTIN in JSON-LD for this product."
+    },
+    {
+      "source": "lidl",
+      "product_id": "10079988",
+      "gtin": [],
+      "name": "Grafschafter Brunchmix-Brötchen",
+      "brand": null,
+      "quantity": null,
+      "unit": null,
+      "category": null,
+      "price_eur": null,
+      "strike_price_eur": null,
+      "promo_label": null,
+      "unit_price_eur": null,
+      "unit_price_basis": null,
+      "availability": "InStoreOnly",
+      "structured_data_type": "schema.org Product (JSON-LD)",
+      "source_url": "https://www.lidl.de/p/grafschafter-brunchmix-broetchen/p10079988",
+      "evidence_sha256": "98728b3d2ecf07ca9da26e435bed916d29b23efa93fdb8bc89a9065b6d7a19ce",
+      "notes": "No GTIN in JSON-LD for this product."
+    }
+  ],
+  "product_verification": {
+    "pages_checked": 5,
+    "pages_with_jsonld_product": 5,
+    "pages_with_price": 0,
+    "pages_with_gtin": 0,
+    "availability_split": {
+      "InStoreOnly": 5
+    },
+    "sample_requirement_status": "NOT MET. A 10-grocery-product sample was requested. After whole-token classification and manual review of every food-vocabulary candidate, the advertised product sitemap contains 5 genuine food SKUs, not 10. This is reported as-is rather than padded with non-food or dead-end matches.",
+    "price_conclusion": "0 of 5 grocery products publish a price. The JSON-LD Offer object carries availability but no price field, and availability is InStoreOnly on all 5. Lidl publishes no online price for these products; prices are only available through the store-selection path, which robots.txt disallows and which this project will not request.",
+    "gtin_conclusion": "0 of 5 grocery products publish a GTIN. No gtin/gtin13/gtin12/gtin14/ean key is present in the JSON-LD. Lidl's own product identifier is the SKU, which is retailer-internal and not comparable across chains.",
+    "pages": [
+      {
+        "slug": "belbake-bio-dinkel-mehl-vollkorn-bioland",
+        "url": "https://www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "efea93ca11d9e34c040b49389fb306bf243cb52cdc3f354649e0bd7cf89e8e48",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_p_belbake-bio-dinkel-mehl-vollkorn-bioland_p10079984-efea93ca11d9.html",
+        "html_text_bytes": 4343,
+        "has_next_data": false,
+        "page_title": null,
+        "jsonld_product_found": true,
+        "price_source": "absent: Offer carries no price field",
+        "offer_keys": [
+          "@type",
+          "availability",
+          "itemCondition",
+          "priceCurrency",
+          "url"
+        ],
+        "price_currency": "EUR",
+        "text_price_candidates": [],
+        "text_price_note": "Page-text price strings, after excluding values adjacent to shipping/Versand labels. Not used as the price; JSON-LD is."
+      },
+      {
+        "slug": "belbake-dinkelmehl-vollkorn",
+        "url": "https://www.lidl.de/p/belbake-dinkelmehl-vollkorn/p10079985",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "246b75d9194d9d6a1ec99b4bffde200aa493f502afa7dbefaf1bbd2f7c5e274a",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_p_belbake-dinkelmehl-vollkorn_p10079985-246b75d9194d.html",
+        "html_text_bytes": 4279,
+        "has_next_data": false,
+        "page_title": null,
+        "jsonld_product_found": true,
+        "price_source": "absent: Offer carries no price field",
+        "offer_keys": [
+          "@type",
+          "availability",
+          "itemCondition",
+          "priceCurrency",
+          "url"
+        ],
+        "price_currency": "EUR",
+        "text_price_candidates": [],
+        "text_price_note": "Page-text price strings, after excluding values adjacent to shipping/Versand labels. Not used as the price; JSON-LD is."
+      },
+      {
+        "slug": "crownfield-bio-knusper-muesli-beeren",
+        "url": "https://www.lidl.de/p/crownfield-bio-knusper-muesli-beeren/p10079987",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "1ee6d5ad027bae375f7c4eae618636b2a190f72a84fa5f00ddc77a78fba3a532",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_p_crownfield-bio-knusper-muesli-beeren_p10079987-1ee6d5ad027b.html",
+        "html_text_bytes": 4374,
+        "has_next_data": false,
+        "page_title": null,
+        "jsonld_product_found": true,
+        "price_source": "absent: Offer carries no price field",
+        "offer_keys": [
+          "@type",
+          "availability",
+          "itemCondition",
+          "priceCurrency",
+          "url"
+        ],
+        "price_currency": "EUR",
+        "text_price_candidates": [],
+        "text_price_note": "Page-text price strings, after excluding values adjacent to shipping/Versand labels. Not used as the price; JSON-LD is."
+      },
+      {
+        "slug": "crownfield-knusper-weniger-suess-hafer-muesli",
+        "url": "https://www.lidl.de/p/crownfield-knusper-weniger-suess-hafer-muesli/p10079986",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "f37d657d8c7ed534ed70976b447c47597424a083eaa1da76991af042bff74018",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_p_crownfield-knusper-weniger-suess-hafer-muesli_p10079986-f37d657d8c7e.html",
+        "html_text_bytes": 4424,
+        "has_next_data": false,
+        "page_title": null,
+        "jsonld_product_found": true,
+        "price_source": "absent: Offer carries no price field",
+        "offer_keys": [
+          "@type",
+          "availability",
+          "itemCondition",
+          "priceCurrency",
+          "url"
+        ],
+        "price_currency": "EUR",
+        "text_price_candidates": [],
+        "text_price_note": "Page-text price strings, after excluding values adjacent to shipping/Versand labels. Not used as the price; JSON-LD is."
+      },
+      {
+        "slug": "grafschafter-brunchmix-broetchen",
+        "url": "https://www.lidl.de/p/grafschafter-brunchmix-broetchen/p10079988",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "98728b3d2ecf07ca9da26e435bed916d29b23efa93fdb8bc89a9065b6d7a19ce",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_p_grafschafter-brunchmix-broetchen_p10079988-98728b3d2ecf.html",
+        "html_text_bytes": 4350,
+        "has_next_data": false,
+        "page_title": null,
+        "jsonld_product_found": true,
+        "price_source": "absent: Offer carries no price field",
+        "offer_keys": [
+          "@type",
+          "availability",
+          "itemCondition",
+          "priceCurrency",
+          "url"
+        ],
+        "price_currency": "EUR",
+        "text_price_candidates": [],
+        "text_price_note": "Page-text price strings, after excluding values adjacent to shipping/Versand labels. Not used as the price; JSON-LD is."
+      }
+    ]
+  },
+  "licensing": {
+    "source": "lidl",
+    "date_utc": "2026-10-01T09:58:10Z",
+    "documents_checked": [
+      {
+        "name": "terms_onlineshop",
+        "url": "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "544df90334147dbb20d363d41e616f2059e662a5bea26a89e678ead5264e8b80",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_c_allgemeine-geschaeftsbedingungen-onlineshop_s10005181-544df9033414.html",
+        "text_bytes": 27719,
+        "text_retrievable": true,
+        "markers_present": [
+          "gewerblich",
+          "geschäftsbedingungen",
+          "inhalte"
+        ],
+        "excerpt": "allgemeine geschäftsbedingungen onlineshop - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoir",
+        "reuse_topic_markers": [],
+        "addresses_data_reuse": false
+      },
+      {
+        "name": "impressum",
+        "url": "https://www.lidl.de/c/impressum/s10005238",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "4de8d8e5c1c9f660da229862bc291f77c4a6dcfbb969f4239b88067d33af2ea5",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_c_impressum_s10005238-4de8d8e5c1c9.html",
+        "text_bytes": 6409,
+        "text_retrievable": true,
+        "markers_present": [
+          "geschäftsbedingungen"
+        ],
+        "excerpt": "impressum - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & spielzeug sale li",
+        "reuse_topic_markers": [],
+        "addresses_data_reuse": false
+      },
+      {
+        "name": "legal_information",
+        "url": "https://www.lidl.de/c/rechtliche-informationen/s10005200",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "5459983af488fcc78e09ecb905d6bc864515dfc516d3260bf411a12b24083f5f",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_c_rechtliche-informationen_s10005200-5459983af488.html",
+        "text_bytes": 4048,
+        "text_retrievable": true,
+        "markers_present": [
+          "geschäftsbedingungen"
+        ],
+        "excerpt": "rechtliche informationen - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & sp",
+        "reuse_topic_markers": [],
+        "addresses_data_reuse": false
+      },
+      {
+        "name": "privacy",
+        "url": "https://www.lidl.de/c/datenschutz/s10005389",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "e7e1a573e692ffbe48bd02c393253536423b24feeb0adfe00c3e220aff9a3fcf",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_c_datenschutz_s10005389-e7e1a573e692.html",
+        "text_bytes": 13690,
+        "text_retrievable": true,
+        "markers_present": [],
+        "excerpt": "datenschutz - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & spielzeug sale ",
+        "reuse_topic_markers": [],
+        "addresses_data_reuse": false
+      },
+      {
+        "name": "withdrawal_rights",
+        "url": "https://www.lidl.de/c/widerrufsrecht-onlineshop/s10005170",
+        "status_code": 200,
+        "result": "success",
+        "sha256": "863c5c8b0e3ccbc1c8368895196776d749971b0e5aaf0cb795d2fc9f06ce7fe4",
+        "evidence_path": "data/research/raw/lidl/www.lidl.de_c_widerrufsrecht-onlineshop_s10005170-863c5c8b0e3c.html",
+        "text_bytes": 15761,
+        "text_retrievable": true,
+        "markers_present": [
+          "geschäftsbedingungen"
+        ],
+        "excerpt": "widerrufsrecht onlineshop - lidl.de feiere den tag des kaffees! entdecke jetzt top-angebote für deinen perfekten kaffeegenuss. search der browser wird nicht leider nicht mehr unterstützt! um die website korrekt anzuzeigen, verwende bitte einen der folgenden browser: chrome firefox safari edge achtung: bitte aktualisiere deinen browser, wenn du mit diesem browser fortfährst, könnte dein einkaufserlebnis nicht zufriedenstellend sein! main navigation zurück essen & trinken wein & spirituosen küche & haushalt baumarkt & garten sport & freizeit wohnen & einrichtung mode & accessoires baby, kind & s",
+        "reuse_topic_markers": [],
+        "addresses_data_reuse": false
+      }
+    ],
+    "explicit_reuse_permission_found": false,
+    "licence_found": false,
+    "terms_found": true,
+    "terms_url": "https://www.lidl.de/c/allgemeine-geschaeftsbedingungen-onlineshop/s10005181",
+    "terms_addresses_data_reuse": false,
+    "database_rights_discussed": "unknown",
+    "api_developer_terms_found": null,
+    "conclusion": "unresolved",
+    "legal_advice_required": true,
+    "notes": "Method: enumerated the 2085 URLs in Lidl's advertised pages sitemap, filtered for legal keywords, fetched the 5 most relevant documents. No URL was guessed. 5 of 5 returned retrievable text, unlike Aldi's client-rendered legal pages. The online-shop AGB is a consumer purchase contract (ordering, prices, payment, withdrawal, returns). It contains no clause on automated extraction, scraping, or reuse of price/content data, and no clause expressly prohibiting it either. The only commercial clause located concerns BULK RESALE OF PURCHASED GOODS ('gewerbliche Weiterverkauf'), which is a purchasing term, not a data-reuse term. REUSE PERMISSION REMAINS UNKNOWN. Absence of a clause is not permission, and it is not prohibition. This is a legal question under German Datenbankherstellerrecht and UrhG and requires advice before any build."
+  }
+}
