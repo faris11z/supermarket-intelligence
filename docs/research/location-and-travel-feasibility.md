@@ -170,7 +170,15 @@ a **store sitemap**, both advertised in its own `robots.txt`:
 |---|---|
 | `https://www.lidl.de/static/sitemap.xml` (index) | 200 - declares product, pages, **stores**, brands, nqps sitemaps |
 | `https://www.lidl.de/p/export/DE/de/product_sitemap.xml.gz` | 200 - **13,337** product URLs |
-| `https://www.lidl.de/s/de-DE/filialen/sitemap.xml` | 200 - **3,669** store URLs (3,665 store-detail + 395 city index pages) |
+| `https://www.lidl.de/s/de-DE/filialen/sitemap.xml` | 200 - **3,669** URLs total: **3,270** store-detail pages (`/filialen/{city}/{street}/`) + **395** city index pages (`/filialen/{city}/`) + 4 section indexes (`/s/`, `/filialen/`, `/neueroeffnungen/`, `/outletverkauf/`) |
+
+> **CORRECTED.** This row previously read "3,669 store URLs (3,665 store-detail +
+> 395 city index pages)". That does not add up: 3,665 + 395 = 4,060, which is 391
+> more than the 3,669 the sitemap actually contains. The 395 city-page figure was
+> right; the store-detail figure was not. Counting the archived sitemap by URL
+> shape gives 3,270 store-detail pages, and 3,270 + 395 + 4 = 3,669 exactly. The
+> error overstated the Lidl store count by 395, i.e. by about 11%, and the
+> impossible sum is the only reason it was visible.
 
 **VERIFIED - the store→postcode problem is solved for Lidl, in server-rendered HTML.**
 Store URLs are `/s/de-DE/filialen/{city-slug}/{street-slug}/`, but the city index page
@@ -283,6 +291,56 @@ and prices remain the binding constraint at 1 of 6** - where the Lidl result sho
 is *data availability*, not scraping difficulty. That reframes the risk: the project is not
 at risk of failing to collect Aldi data, it is at risk of having nothing to optimise
 across.
+
+### 2.4 Data licensing: the unresolved risk that could invalidate everything above
+
+Every technical finding in this section is worthless if we are not allowed to use the data.
+This was investigated and **could not be resolved from the website**, which is itself the
+finding.
+
+**VERIFIED.** Aldi Nord's pages sitemap (`/sitemaps/.aldi-nord-sitemap-pages.xml`, 649 URLs)
+contains **5 GDPR/privacy pages and 7 promotion or lottery terms pages** (Gewinnspiele,
+E-Ladesaeulen, social channels, Bollerwagen). There is **no general Terms of Use and no
+Impressum** anywhere in the sitemap. So there is no published document that grants reuse,
+and no document in which to seek permission.
+
+**VERIFIED - the legal text is not retrievable without executing JavaScript.** The
+`Datenschutz` page server-renders only **36 characters** of body text. The
+`teilnahmebedingungen-agb` page has `apiData: null` in `__NEXT_DATA__`; its content is
+CMS-fetched client-side. The footer's legal links are also client-rendered, so guessing
+paths produced three 404s and the homepage contains only 6 `href` elements, none of them
+legal. Executing JavaScript was outside this phase's declared method.
+
+**INFERRED - and this is the load-bearing point.** Absence of a published prohibition is not
+permission. Under German and EU law the default applies regardless of what any `robots.txt`
+says:
+
+* **UrhG §87b** grants a database maker who made a "wesentliche Investition" (substantial
+  investment) an exclusive right to reproduce, distribute and make publicly available
+  substantial parts of that database. A retailer product catalog is exactly the kind of
+  investment this covers.
+* Absent any grant, the default is **all rights reserved**.
+* **`robots.txt` is a crawl instruction, not a licence.** That a path is not `Disallow`ed
+  says nothing about reuse rights. This distinction is easy to get wrong and would be
+  expensive to get wrong.
+
+**Conclusion: this is UNRESOLVED and needs legal advice, not more fetching.** Further
+requests would not change the answer, because the answer is not in the website. Until it is
+resolved, the defensible position is:
+
+1. Research and prototype on **locally cached observations** already in this repository.
+2. **No redistribution** of retailer data, in any form.
+3. **No production ingestion pipeline** built on it.
+4. Any published output cites sources rather than mirroring retailer catalogs.
+
+**ASSUMPTION (flagged, not verified).** Personal, non-commercial research use of a handful
+of pages is very likely tolerated. This is a common practice and Aldi does publish a
+permissive `robots.txt`, but *tolerated* is not the same as *licensed*, and this project
+intends to build a product rather than a paper. Do not let this assumption harden into
+practice without advice.
+
+**ALSO OPEN.** SMARD's data licence (§4.2) and tankerkoenig's (§5.1) remain unconfirmed
+and are separate questions requiring the same treatment.
 
 **UNKNOWN.** Aldi Nord, Lidl, Netto and REWE each operate **regional banners with
 different legal entities and different assortments** (e.g. Aldi Nord vs. Aldi Süd;
@@ -452,6 +510,27 @@ matters:
   time-varying price *if* the user is on a dynamic tariff). Deps strongly on the tariff
   assumption (see §4.2).
 
+**NOT RESEARCHED - the human is not costed at all.** Everything in §4 and §5.1 prices
+*machines*: fuel for a car, electricity for an EV, and a Deutschlandticket for public
+transport. There is no model anywhere in this project for the energy a **person**
+spends, and no cost attributed to:
+
+* walking a further distance or carrying heavier bags,
+* cycling uphill or into a headwind,
+* the physical effort of a second store versus one, which is the exact thing a
+  single-store-versus-multi-store recommendation asks the user to decide.
+
+This is a real gap, not a neutral omission. A multi-store itinerary is not merely
+further and more expensive in fuel; it is more physically demanding, and for a
+wheelchair user, a parent with small children, or anyone with a back injury the
+extra effort can be a harder constraint than the money. Any total-cost function
+that reports euros but not effort will systematically recommend the wrong plan for
+those users. The honest options are to cost human energy (a literature-based
+caloric or metabolic estimate, which is a research task in its own right) or to
+state the limitation in the product and let the user override it. Neither has been
+done. Treating "marginal cost = 0" for walking as though it were a complete answer
+is the specific error to avoid.
+
 **UNKNOWN.** Parking fees at German supermarket car parks. This is a real, often
 non-trivial cost at city-centre REWE/EDEKA/Kaufland/Netto sites and it penalises exactly
 the central stores that are otherwise most attractive. No open source identified.
@@ -617,7 +696,7 @@ Reassessed against the reframed problem rather than the original one.
 | Travel cost / routing | **No** | Deterministic engines exist (§3) |
 | Store selection, multi-store | **No** | Exact enumeration at realistic sizes (§6.3) |
 | Travel-cost vs. price trade-off | **No** | Deterministic multi-objective optimisation |
-| **Cross-chain product entity resolution** | **Yes** | Own-brand problem; no GTIN on Aldi Nord (§Phase 1); only ~5.1% overlap in Open Prices |
+| **Cross-chain product entity resolution** | **Yes, but it is the blocker** | Own-brand problem. **No GTIN on Aldi Nord *or* Lidl groceries** (Phase 1, scoped in Phase 2, re-measured 0/5 in Phase 3); only ~5.1% overlap in Open Prices. Phase 3 argues this makes matching a *confidence* problem, not a ranking one: a wrong match produces a confidently wrong cheapest-basket price, which is worse than no answer. |
 | **Free-text list → normalised item** | **Yes** | Users type "milch 3,5% 1l"; a parser, not a formula |
 | Store→chain identity resolution from OSM | **Possibly** | Name/brand noise; could be rules first, ML if rules fail |
 | German sentiment / aspect analysis | **Not yet justified** | Phase 1 found no accessible review data. Building sentiment on absent data is building nothing. |
@@ -668,6 +747,7 @@ exists. Do not build a model to fit a dataset that is not there.
 | 6 | Parking fee data for German supermarket sites | Car costing accuracy |
 | 7 | Which HAFAS operators are current on `transport.rest` for MV and beyond? | Transit routing |
 | 8 | CartList's actual feature set | Competitive accuracy |
+| 9 | **Are we legally permitted to reuse retailer data?** No published ToS, no Impressum, legal text not retrievable without JS. German law (UrhG §87b) applies by default and `robots.txt` is not a licence. **Needs legal advice, not more requests** (§2.4). | **Everything.** Highest-priority open item. |
 
 ---
 
@@ -690,7 +770,7 @@ Not a verified total count; listed for reproducibility and to show boundedness.
 | `www.smard.de/app/chart_data/...` | Day-ahead price series | 404 - wrong `filter` module ID |
 | Web search | Deutschlandticket pricing, SMARD publications, competitors | See §5.2, §4.2, §7 |
 | `www.lidl.de/static/sitemap.xml` | Lidl sitemap index | 200 - product + **stores** + pages + brands |
-| `www.lidl.de/p/export/DE/de/product_sitemap.xml.gz` | Lidl product catalog | 200 - 13,337 URLs, ~99% non-food/alcohol |
+| `www.lidl.de/p/export/DE/de/product_sitemap.xml.gz` | Lidl product catalog | 200 - 13,337 URLs, of which **5 are groceries** (Phase 3 whole-token classification + hand review) |
 | `www.lidl.de/s/de-DE/filialen/sitemap.xml` | Lidl store sitemap | 200 - 3,669 store URLs |
 | `www.lidl.de/p/belbake-bio-dinkel-mehl-vollkorn-bioland/p10079984` | Grocery price test | 200 - no price, no GTIN, `InStoreOnly` |
 | `www.lidl.de/p/silvercrest-brot-frischhaltedose/p100409619` | Price/GTIN positive control | 200 - 9.99 + 2 GTINs, `OnlineOnly` |
@@ -708,10 +788,13 @@ Not a verified total count; listed for reproducibility and to show boundedness.
   2 Lidl) plus 2 store pages.** Fixed in `access_log.json` (`_provenance.note_on_counts` records the
   correction), `data/raw/spike/README.md` and the `timeline.md` 10:12 entry.
 * **Lidl is no longer a candidate price source.** Phase 1 left it as "the make-or-break
-  for a second chain with GTIN". Tested and resolved: the catalog is ~99% non-food and
-  alcohol, and real groceries return `InStoreOnly` with no price and no GTIN. The Phase 1
+  for a second chain with GTIN". Tested and resolved: of 13,337 catalog URLs only **5** are
+  groceries (the 48 automated survivors read by hand: 24 alcohol, 12 plants, 7 non-food),
+  and real groceries return `InStoreOnly` with no price and no GTIN. The Phase 1
   note that "Lidl exposes JSON-LD with SKU, GTIN-13 and price" is **true but misleading** -
-  it holds only for the `OnlineOnly` non-food range.
+  it holds only for the `OnlineOnly` non-food range. **Phase 3 re-confirmed this** by
+  measuring 0 of 5 grocery pages with any GTIN field, so the "second chain with GTIN"
+  premise is now closed rather than open.
 * The cross-chain GTIN count is reported as 388 in one place and 389 in another in the
   Phase 1 notes. The difference is a single product and is most likely a filtering
   difference between the price-export join and the product-table join. **Unreconciled**;

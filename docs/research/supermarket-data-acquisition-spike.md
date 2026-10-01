@@ -2,7 +2,11 @@
 
 **Date:** 2026-09-30
 **Scope:** Feasibility only. No production scraper was built.
-**Total HTTP requests:** 42 across all six chains, including 5 product-detail pages.
+**Total HTTP requests:** 67 across all six chains, including 7 product-detail pages.
+These are Phase 1 + 2 requests only. Phase 3 later made 117 more; see
+[phase-3-price-data-validation.md](phase-3-price-data-validation.md) for that
+separation, because mixing the two is what produced the request-count errors
+corrected below.
 **Raw sample:** [`data/raw/spike/`](../../data/raw/spike/)
 
 ## How to read this report
@@ -60,16 +64,40 @@ location-dependent question - "is it in stock at *my* branch, at *my* price" - w
 | EDEKA | Not feasible - edge-blocked; candidate shop domains do not resolve |
 
 **The single most important finding is a trap, not a win.** Lidl looks like the best
-technical result: server-rendered, clean JSON-LD, **GTIN-13 barcodes present**, and
-even per-product `aggregateRating` (54 reviews, 4.5 stars on the wine we sampled)
-**[OBSERVED]**. But `lidl.de` is **not a general grocery shop**. Its advertised catalog
-of 13,337 product URLs contains **no milk, no eggs, no butter, no pasta, no flour, no
-bananas, no chicken** - substring searching for our whole test basket returned only
-false positives such as *Butterbirne* (a pear cultivar), *Eierlikör* (egg liqueur),
-*Reißverschluss* (zipper) and *Speierling* (fir tree) **[OBSERVED]**. The catalog is
-dominated by wine (~962 URLs), non-food goods (~916) and coffee equipment (~289)
-**[INFERRED from slug analysis]**. Choosing Lidl because its JSON-LD is the prettiest
-would have wasted the entire project.
+technical result: server-rendered, clean JSON-LD **[OBSERVED]**. But `lidl.de` is
+**not a general grocery shop**, and Phase 3 overturned two of the claims this
+paragraph used to make.
+
+> **CORRECTED IN PHASE 3 (2026-09-30).** This paragraph originally read "**GTIN-13
+> barcodes present**", "even per-product `aggregateRating` (54 reviews, 4.5 stars
+> on the wine we sampled)" and "contains **no milk, no eggs, no butter, no pasta,
+> no flour, no bananas, no chicken**". Three of those are wrong:
+>
+> - **No GTIN.** All 5 grocery pages carry a JSON-LD `Product` object, but **0 of 5
+>   contain any `gtin`/`gtin13`/`gtin12`/`gtin14`/`ean` key**. The Phase 1 GTIN
+>   claim came from the *wine* page, not from a grocery page. Lidl's own
+>   identifier is a retailer-internal `p10079984`-style SKU, which is not
+>   comparable across chains, so it does not solve matching either.
+> - **No `aggregateRating` on the grocery pages.** Same origin: it was observed on
+>   a wine page, not on a food page.
+> - **"no flour" was wrong.** Phase 3 re-classified the catalog by matching German
+>   grocery vocabulary as whole tokens instead of substrings, then hand-reviewed
+>   every survivor. The catalog contains **5 genuine grocery SKUs, and two of them
+>   are flour**: `belbake-bio-dinkel-mehl-vollkorn-bioland` and
+>   `belbake-dinkelmehl-vollkorn`. Milk, eggs, butter, pasta, bananas and chicken
+>   are genuinely absent.
+>
+> The corrected numbers are starker than the original: of 48 candidates that
+> survived automated filtering, **24 are alcohol, 12 are plants, 7 are non-food,
+> and only 5 are groceries**. Alcohol is the largest single group (*trocken*
+> appears 597 times, *rotwein* 365). All 5 groceries are `InStoreOnly` and
+> **0 of 5 publish a price**, so Lidl is not even a partial price source. This is
+> why the 10-product grocery sample could not be met, and why choosing Lidl
+> because its JSON-LD is the prettiest would have wasted the entire project.
+>
+> The substring method itself is also recorded as a false negative: an earlier
+> pass reported a food share near 1% because `-ba` matched *bananenpflanze* and
+> `-ei` matched *eiche*. Prefix matching is not a measurement.
 
 **Major blockers:** (1) EDEKA, Aldi Süd, REWE and Kaufland are behind bot protection we
 will not circumvent; (2) the two hardest chains to match are precisely the two we can
@@ -302,6 +330,18 @@ Aldi Süd, and Aldi Nord covers only part of Germany **[INFERRED]**.
   asymmetry is decisive: GTIN is the only *exact* join key between chains. Without it,
   matching "Frische Milch" to a REWE or Kaufland equivalent is **inference, not lookup**
   - which is exactly where the ML matching component earns its place.
+
+  > **SCOPED IN PHASE 2, RE-CONFIRMED IN PHASE 3 (2026-09-30).** The Lidl half of this
+  > claim holds only for the **`OnlineOnly` non-food range**, which §4 of the Phase 2 report
+  > already flagged as "true but misleading". Phase 3 then measured it directly: **0 of 5**
+  > Lidl *grocery* pages expose any of `gtin`, `gtin8/12/13/14`, `ean` or `isbn` on
+  > permitted paths. The sentence above should be read as *"the exact join key exists for
+  > Lidl's non-food catalogue, not for its groceries"*.
+  >
+  > The practical consequence is the same as a full retraction: there is no exact join key
+  > on any chain we can price, so the "asymmetry is decisive" argument does not hold, and
+  > with it the claim that product matching is a solvable ML ranking problem. See the Phase 3
+  > report for why that changes the recommendation.
 * **A GTIN may exist behind a robots-disallowed path.** `/mds/` is disallowed in Aldi
   Nord's `robots.txt` and is plausibly a master-data service - the most likely home of a
   barcode. It was **not** probed **[OBSERVED]**. So the precise claim is *"no GTIN on
@@ -402,6 +442,33 @@ it is showing. Reporting a promo-inflated "cheapest basket" as the answer would 
 misleading. Unit price also enables per-kg/l comparison, which is the only way to
 compare a 600 g pack against a 1 kg pack fairly.
 
+> **PHASE 3 REPORTED A CONTRADICTION HERE. THE PHASE 3 PARSER WAS WRONG, NOT
+> PHASE 1.** Phase 3's parser concluded that Aldi Nord publishes no `basePrice`
+> field, and this note recorded that correction. It should not have. The field
+> **is** published, on 3 of the 4 pages that parsed, and the values match Phase 1
+> exactly (milk 0.99 EUR/L, chicken 11.32 EUR/kg, bananas 0.99 EUR/kg).
+>
+> `basePrice` is an array of objects nested inside `currentPrice`, not a
+> top-level product key:
+>
+> ```json
+> "currentPrice": {"priceValue": 6.79,
+>                  "basePrice": [{"basePriceValue": 11.32, "basePriceScale": "kg"}]}
+> ```
+>
+> The parser read `product['basePrice']` and `product['basePriceUnit']`, both
+> one level too shallow, so both returned `None` and the diagnostic
+> `'basePrice' in product` was `False` as well. Only the archived HTML revealed
+> the truth. The parser is fixed and `verify_phase3.py` now re-derives the field
+> from the raw bytes, so this specific false negative cannot recur.
+>
+> The underlying caution below still stands and is unchanged: where a unit price
+> genuinely is absent (the 1 kg Weizenmehl), a derived per-kg figure inherits
+> any error in the stated unit, and "per kg" on bananas is a pricing method
+> rather than a quantity. Treat a derived figure as computed, never as quoted.
+> But the common case is the good one: a published, legally mandated base price,
+> read directly from the page.
+
 **Database.** Needs columns we had not planned: `unit_price` + `unit_price_scale`,
 `reference_price` + `reference_price_label`, `promo_valid_from` / `promo_valid_until`,
 `is_available`, `is_recall`, `deposit_value`, and a `source_chain` + `source_url` +
@@ -491,7 +558,13 @@ matching is inference-based there.
 
 ## Appendix - Evidence and compliance
 
-* **Requests:** 42 total, 5 product-detail pages, no headless browser, no JS execution.
+* **Requests:** 67 total, 7 product-detail pages, no headless browser, no JS
+  execution. The per-request breakdown is in
+  [`data/raw/spike/access_log.json`](../../data/raw/spike/access_log.json), which
+  is the authoritative record. This document previously said "42 total, 5
+  product-detail pages"; 42 was the count before the store-locator follow-up (11
+  requests) and the licensing review (14 requests), and "5" was the Aldi-only
+  product-page count presented as if it were the across-chain total.
 * **Discovery:** exclusively via `robots.txt`-advertised sitemaps.
 * **Not done:** no CAPTCHA solving, no UA spoofing, no proxy/IP rotation, no retry after
   a block, no private-API reverse engineering, no disallowed-path requests, no
