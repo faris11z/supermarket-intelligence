@@ -180,3 +180,206 @@ difficulty.
 ### Next
 - The optimiser is not the bottleneck. Decide whether to accept a single-chain scope or spend more effort on a second price source (SMARD module ID remains the only unblocked lead).
 
+
+## 12:40
+
+Data-licensing review, 14 requests, all to robots-permitted paths on aldi-nord.de. Done
+because this could invalidate every technical finding so far, and it was the cheapest open
+question to test. It could not be resolved, and the failure mode turned out to be the
+interesting part.
+
+Aldi Nord's pages sitemap holds 649 URLs, of which 5 are GDPR/privacy pages and 7 are
+promotion or lottery terms (Gewinnspiele, E-Ladesaeulen, social channels, Bollerwagen).
+There is **no general Terms of Use and no Impressum** anywhere in the sitemap, so there is
+no published document granting reuse and none in which to seek permission. Guessing paths
+produced three 404s; the homepage server-renders only 6 href elements, none of them legal,
+because the footer is client-rendered.
+
+The decisive detail is that the legal text is not retrievable without executing JavaScript.
+The Datenschutz page server-renders **36 characters** of body text. The
+teilnahmebedingungen-agb page has `apiData: null` in `__NEXT_DATA__` and fetches its content
+from a CMS on the client. So even if a relevant clause existed, we could not read it under
+this phase's declared method.
+
+The reasoning that matters: **absence of a published prohibition is not permission.** Under
+UrhG §87b a database maker who made a substantial investment holds an exclusive right to
+reproduce and redistribute substantial parts of it, which is exactly what a retailer product
+catalog is. With nothing granted, the default is all-rights-reserved. And robots.txt is a
+crawl instruction, not a licence. That distinction is easy to conflate and expensive to get
+wrong, so it is now written into §2.4 of the Phase 2 report and raised to open question 9
+as the highest-priority blocker.
+
+The recommendation is deliberately to stop fetching. More requests cannot answer this,
+because the answer is not on the website. It needs a lawyer. Until then the defensible
+position is: prototype on the observations already cached in this repo, no redistribution,
+no production ingestion pipeline, and cite sources rather than mirror catalogs.
+
+One assumption is flagged rather than hidden: that personal, non-commercial research on a
+handful of pages is tolerated. Probably true, and Aldi does publish a permissive robots.txt,
+but tolerated is not licensed, and this project intends to be a product.
+
+Also logged 14 requests properly, so `access_log.json` now totals 67 and carries a
+per-request `legal_review_requests` list, including the 7 redirected-and-discarded URL
+probes. The log staying honest matters more than the request looking tidy.
+
+### Things we do
+- Chose the cheapest question that could invalidate the project, and tested it before writing any pipeline.
+- Reported "unresolved" instead of assuming the permissive robots.txt meant permission.
+- Separated "we could not read the terms" from "there are no terms", which are different failures with different fixes.
+- Flagged an assumption about tolerated research use rather than letting it harden into practice.
+
+---
+
+## Phase 3
+
+Started because Phases 1 and 2 established what *might* be available, but every
+number in them was hand-copied out of HTML. Nothing was re-derivable, and three
+of the estimates turned out to be wrong. So the question was not "what can we
+get", it was "can we prove it, and would it survive being checked".
+
+Built a small harness instead of a pipeline: one probe per source, one GET per
+URL, no retries, no proxy, no cookie jar, no JavaScript rendering, and every
+request appended to `data/research/request_log.jsonl` with its SHA-256 and saved
+response body. `research/verify_phase3.py` re-parses those saved bodies rather
+than trusting the reports, so a report that drifts from its evidence fails the
+check. 28 checks, all passing, which means the evidence is self-consistent. It
+does not mean the sources are usable, and the harness says so in its own output.
+
+### The store count was never measured
+
+Phase 2 reported roughly 1,693 Aldi Nord stores. That number was inferred from
+store ID ranges, and inference is not measurement. The advertised sitemap index
+gives **2,236** exactly, 543 more than estimated. The estimate is now marked
+superseded rather than quietly adjusted, because a number that was never
+measured should not be allowed to drift into looking like one.
+
+### "Roughly 1% grocery" was an artifact of substring matching
+
+Phase 2 estimated Lidl's catalog was about 1% food, using substring matching on
+URL slugs. Phase 3's whole-token match plus a hand review of every survivor
+finds the advertised catalog is 13,337 URLs of which **5** are genuine food. The
+old estimate overcounted because `-ba` matched `bananenpflanze` and `-ei` matched
+`eiche`. Withdrawn.
+
+The same 48 candidates that survived filtering, read by hand: 24 alcohol, 12
+plants and seedlings, 7 non-food, 5 food. The largest group is alcohol, and
+Lidl's actual grocery own brands appear zero times in the catalog.
+
+### A deliverable was requested that the data does not support
+
+The brief asked for a deterministic sample of 10 ordinary grocery products from
+Lidl. The advertised sitemap contains 5. Reported as unmet rather than padded
+with alcohol, seedlings, or dead links, and the verifier now fails if that is
+ever quietly redefined as a success. This is the kind of gap that is easiest to
+paper over and most expensive to ship.
+
+### Lidl's prices are not behind a bot wall, they are simply absent
+
+All five food pages return valid `Product` JSON-LD whose `Offer` carries
+`availability: InStoreOnly` and **no price field**, and no GTIN. Lidl publishes
+no online price for these products at all. The only prices sit behind the
+store-selection path, which robots.txt disallows, so we do not request it. The
+finding is stronger than "blocked": there is nothing there to block.
+
+### The licensing question was half-closable, and the half that closed is not permission
+
+Phase 2 could not read Aldi's legal pages because they are client-rendered.
+Lidl's pages sitemap, however, lists its own legal documents, so Phase 3
+retrieved all five and they render server-side. The Online-shop AGB is 27.7 KB
+of consumer purchase terms: ordering, payment, returns, withdrawal. It contains
+no clause on automated extraction, scraping, or reuse, and no clause
+prohibiting them either. The only commercial clause found concerns bulk resale
+of purchased goods, which is a purchasing term, not a data-reuse term.
+
+So the honest status is **unknown, not denied**, for both retailers. Absence of a
+clause is neither permission nor refusal, and Phase 2's reasoning holds: the
+answer is not on the website, it needs a lawyer. We stopped fetching, because
+more requests cannot answer it.
+
+### The actual blocker is product identity, not price data
+
+Worth separating, because the whole project was pointed at the wrong target for
+two phases. The sources do not join to each other:
+
+- Aldi publishes **prices** but no **barcodes**.
+- Lidl publishes a **SKU** but no **prices**.
+- Open Prices publishes **barcodes** with **historical** prices.
+
+Cross-chain matching needs a barcode from the retailer, and none of the six
+target chains publishes one on a permitted page. So a price comparison across
+chains cannot be made exact. Fuzzy name matching on ~5% of products would
+produce confidently wrong prices, which is worse than shipping nothing. No amount
+of additional price sourcing fixes this, which is why the phase ended with a
+recommendation to stop looking for a public price feed rather than keep hunting.
+
+### A 200 that means nothing
+
+`prices.openfoodfacts.org` returns HTTP 200 with a Vue single-page-app HTML
+shell for any non-API path. A status-code health check would call the API
+working while handing back 26 KB of HTML. The probe now requires a JSON parse
+before it will call an endpoint reachable. It also initially reported the API
+as *unreachable*, for the mirror-image mistake of dismissing the real endpoint
+as a shell. The live total is 318,982 against Phase 1's 318,731, so the dataset
+simply grew. The API works; its coverage is still too thin to help, which is
+what Phase 1 said and is now re-confirmed rather than revised.
+
+### Evidence got overwritten, and the log noticed
+
+An early version of the client named evidence files after the URL only, so a
+later request to the same URL silently replaced an earlier body. The request log
+kept claiming a SHA-256 for a file that no longer held those bytes, so 41 of 48
+evidence files appeared to fail verification. Two things were wrong: the
+storage could overwrite evidence, and the verifier was checking historical
+entries against current files. Evidence is now content-addressed, and the
+verifier only checks the current artefact per path, reporting the rest as
+superseded rather than as corruption. Deletions are recorded as tombstones in
+the log, because a delete that is not logged is indistinguishable from data
+loss. Reporting 41 mismatches as if they were all corruption would have been
+worse than the bug: it trains a reader to ignore the report.
+
+**117 real requests** across 53 distinct URLs, against a 120 per-run cap that no
+single run approached. The high total is re-fetching the same sitemaps while
+parsers were corrected, not breadth of crawling. The log file holds many more
+lines than that, because each `--offline` run appends one `replayed: true` record
+per URL; an earlier entry here said "235 requests", which had counted those
+replays as real traffic. The 53 distinct URLs figure was always correct.
+
+**A false negative about Aldi, found by re-reading the archive.** Phase 3 reported
+that Aldi Nord publishes no `basePrice` field, and Phase 1's records disagreed.
+Phase 1 was right. `basePrice` is an array of objects nested inside
+`currentPrice`, and the Phase 3 parser read `product['basePrice']` one level too
+shallow, so it returned `None` and the report stated a field was absent while the
+value sat in the same dict the parser had already read a shelf price from. Aldi
+does publish per-unit prices: 11.32 EUR/kg on the 600 g chicken, 0.99 EUR/L on
+the milk, 0.99 EUR/kg on the bananas. The parser is fixed, the raw HTML is
+archived, and `verify_phase3.py` now re-derives the field from those bytes and
+fails if the parser and the archive disagree. Recorded here because the failure
+mode matters more than the bug: a parser that returns `None` for a field it
+mis-reads is indistinguishable from a source that does not publish the field, and
+that false negative had already removed unit-price comparison from the project's
+capabilities.
+
+### Where this leaves the project
+
+**Not ready for a real-time multi-chain price comparison.** Live price coverage
+is 1 of 6 chains, no retailer publishes a GTIN, and reuse permission is
+unresolved for both responsive retailers.
+
+Unblocked today, with no open legal question: store location, opening hours,
+travel-time modelling, and total-cost arithmetic. That is also the defensible
+differentiator, since the competitor research found existing basket optimisers
+already treat the product as a basket and none of them model the trip.
+
+Needs a person, not more requests: legal advice on Datenbankherstellerrecht and
+UrhG, and a product decision about whether one live source plus crowdsourced
+prices is enough to be worth building, or whether this needs a commercial data
+partner.
+
+### Things we did
+- Replaced hand-copied numbers with evidence that a script can re-derive.
+- Marked two earlier estimates as superseded instead of quietly fixing them.
+- Reported a requested deliverable as unmet rather than padding the sample.
+- Distinguished "no price published" from "price blocked", which are different
+  problems with different fixes.
+- Wrote down that the blocker is product identity, after two phases pointed at
+  price availability.
